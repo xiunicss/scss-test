@@ -67,3 +67,24 @@
 @mixin shadow($color: rgba(0, 0, 0, 0.1), $blur: 8px) {
   box-shadow: 0 2px $blur $color;
 }
+
+// mixins.scss
+
+@mixin button($bg-color, $text-color: #fff) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: $bg-color;
+  color: $text-color;
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  &:hover {
+  opacity: 0.9;
+  }
+}

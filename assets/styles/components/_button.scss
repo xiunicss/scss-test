@@ -1,3 +1,29 @@
+// buttons.scss
+
+@import 'variables';
+@import 'mixins';
+
+
+.btn--primary {
+  @include button(map-get($colors, primary), #fff);
+}
+
+@each $theme-name, $colors in $themes {
+[data-theme="#{$theme-name}"] {
+.btn--primary {
+@include button(map-get($colors, primary), #fff);
+}
+
+.btn--secondary {
+@include button(map-get($colors, secondary), #fff);
+}
+
+.btn--outline {
+@include button(transparent, map-get($colors, primary));
+border: 1px solid map-get($colors, primary);
+}
+}
+}
 // button {
 //   all: unset;
 //   cursor: pointer;
@@ -127,3 +153,4 @@
   &.md { @include button-size(md);}
   &.lg { @include button-size(lg);}
 }
+

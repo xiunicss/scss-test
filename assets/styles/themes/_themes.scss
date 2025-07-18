@@ -3,11 +3,31 @@
 
 @use './variables';
 
-@each $theme-name, $colors in variables.$themes {
-  .#{$theme-name} {
-    @each $key, $value in $colors {
-      --color-#{$key}: #{$value};
+// @each $theme-name, $colors in variables.$themes {
+//   .#{$theme-name} {
+//     @each $key, $value in $colors {
+//       --color-#{$key}: #{$value};
+//     }
+//   }
+
+// }
+
+@each $theme, $tokens in $themes {
+  [data-theme="#{$theme}"] {
+    .btn--primary {
+      @include button(map-get($tokens, primary),#fff);
     }
   }
-
 }
+
+@each $theme, $tokens in $themes {
+  [data-theme="#{$theme}"] {
+    .btn--primary {background: #000;}
+  }
+}
+
+// .#{$theme-name} {
+//     @each $key, $value in $colors {
+//       --color-#{$key}: #{$value};
+//     }
+//   }
