@@ -159,7 +159,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -426,7 +427,7 @@ p {
 }
 
 /* _themes.scss : 테마 css변수생성 */
-.light {
+[data-theme=theme-light] {
   --color-primary: #1e90ff;
   --color-secondary: #ff691e;
   --color-background: #eeeeee;
@@ -436,7 +437,7 @@ p {
   --color-gray900: #111111;
 }
 
-.dark {
+[data-theme=theme-dark] {
   --color-primary: rgb(122, 122, 185);
   --color-secondary: #ff691e;
   --color-background: #111111;
@@ -446,7 +447,7 @@ p {
   --color-gray900: #f3f3f3;
 }
 
-.school {
+[data-theme=theme-school] {
   --color-primary: green;
   --color-secondary: #ff691e;
   --color-background: #f2d95b;
@@ -456,7 +457,7 @@ p {
   --color-gray900: #111111;
 }
 
-.school1 {
+[data-theme=theme-school1] {
   --color-primary: yellow;
   --color-secondary: #ff691e;
   --color-background: #fffbe6;
@@ -466,7 +467,7 @@ p {
   --color-gray900: #111111;
 }
 
-.school2 {
+[data-theme=theme-school2] {
   --color-primary: orange;
   --color-secondary: #ff691e;
   --color-background: #fffbe6;
@@ -476,7 +477,7 @@ p {
   --color-gray900: #111111;
 }
 
-.school3 {
+[data-theme=theme-school3] {
   --color-primary: gray;
   --color-secondary: #ff691e;
   --color-background: #fffbe6;
@@ -677,6 +678,344 @@ p {
   .grid-container {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+/****** _variables.scss : 프로젝트에서 공통으로 사용할 폰트 크기, 간격 등 변수 정의 ******/
+/* _mixins.scss : 자주 쓰는 스타일 패턴이나 반복되는 CSS 로직을 재사용하기 위한 SCSS "함수" 모음 */
+.btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #1e90ff;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.btn--primary:hover {
+  opacity: 0.9;
+}
+
+[data-theme=light] .btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #1e90ff;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=light] .btn--primary:hover {
+  opacity: 0.9;
+}
+[data-theme=light] .btn--secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ff691e;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=light] .btn--secondary:hover {
+  opacity: 0.9;
+}
+[data-theme=light] .btn--outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  color: #1e90ff;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 1px solid #1e90ff;
+}
+[data-theme=light] .btn--outline:hover {
+  opacity: 0.9;
+}
+
+[data-theme=dark] .btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgb(122, 122, 185);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=dark] .btn--primary:hover {
+  opacity: 0.9;
+}
+[data-theme=dark] .btn--secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ff691e;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=dark] .btn--secondary:hover {
+  opacity: 0.9;
+}
+[data-theme=dark] .btn--outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  color: rgb(122, 122, 185);
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 1px solid rgb(122, 122, 185);
+}
+[data-theme=dark] .btn--outline:hover {
+  opacity: 0.9;
+}
+
+[data-theme=school] .btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: green;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=school] .btn--primary:hover {
+  opacity: 0.9;
+}
+[data-theme=school] .btn--secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ff691e;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=school] .btn--secondary:hover {
+  opacity: 0.9;
+}
+[data-theme=school] .btn--outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  color: green;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 1px solid green;
+}
+[data-theme=school] .btn--outline:hover {
+  opacity: 0.9;
+}
+
+[data-theme=school1] .btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: yellow;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=school1] .btn--primary:hover {
+  opacity: 0.9;
+}
+[data-theme=school1] .btn--secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ff691e;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=school1] .btn--secondary:hover {
+  opacity: 0.9;
+}
+[data-theme=school1] .btn--outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  color: yellow;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 1px solid yellow;
+}
+[data-theme=school1] .btn--outline:hover {
+  opacity: 0.9;
+}
+
+[data-theme=school2] .btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: orange;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=school2] .btn--primary:hover {
+  opacity: 0.9;
+}
+[data-theme=school2] .btn--secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ff691e;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=school2] .btn--secondary:hover {
+  opacity: 0.9;
+}
+[data-theme=school2] .btn--outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  color: orange;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 1px solid orange;
+}
+[data-theme=school2] .btn--outline:hover {
+  opacity: 0.9;
+}
+
+[data-theme=school3] .btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: gray;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=school3] .btn--primary:hover {
+  opacity: 0.9;
+}
+[data-theme=school3] .btn--secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #ff691e;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+[data-theme=school3] .btn--secondary:hover {
+  opacity: 0.9;
+}
+[data-theme=school3] .btn--outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  color: gray;
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: 1px solid gray;
+}
+[data-theme=school3] .btn--outline:hover {
+  opacity: 0.9;
 }
 
 /* _mixins.scss : 자주 쓰는 스타일 패턴이나 반복되는 CSS 로직을 재사용하기 위한 SCSS "함수" 모음 */

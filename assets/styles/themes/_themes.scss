@@ -1,28 +1,13 @@
-
 /* _themes.scss : 테마 css변수생성 */
 
-@use './variables';
+@use "./_themevariables";
 
-// @each $theme-name, $colors in variables.$themes {
-//   .#{$theme-name} {
-//     @each $key, $value in $colors {
-//       --color-#{$key}: #{$value};
-//     }
-//   }
-
-// }
-
-@each $theme, $tokens in $themes {
-  [data-theme="#{$theme}"] {
-    .btn--primary {
-      @include button(map-get($tokens, primary),#fff);
+@use "./_themevariables" as themevars;
+@each $theme-name, $colors in themevars.$themes {
+  [data-theme="theme-#{$theme-name}"] {
+    @each $key, $value in $colors {
+      --color-#{$key}: #{$value};
     }
-  }
-}
-
-@each $theme, $tokens in $themes {
-  [data-theme="#{$theme}"] {
-    .btn--primary {background: #000;}
   }
 }
 

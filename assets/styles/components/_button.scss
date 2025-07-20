@@ -1,28 +1,27 @@
 // buttons.scss
 
-@import 'variables';
-@import 'mixins';
-
+@import "../base/variables";
+@import "../base/mixins";
 
 .btn--primary {
   @include button(map-get($colors, primary), #fff);
 }
 
 @each $theme-name, $colors in $themes {
-[data-theme="#{$theme-name}"] {
-.btn--primary {
-@include button(map-get($colors, primary), #fff);
-}
+  [data-theme="#{$theme-name}"] {
+    .btn--primary {
+      @include button(map-get($colors, primary), #fff);
+    }
 
-.btn--secondary {
-@include button(map-get($colors, secondary), #fff);
-}
+    .btn--secondary {
+      @include button(map-get($colors, secondary), #fff);
+    }
 
-.btn--outline {
-@include button(transparent, map-get($colors, primary));
-border: 1px solid map-get($colors, primary);
-}
-}
+    .btn--outline {
+      @include button(transparent, map-get($colors, primary));
+      border: 1px solid map-get($colors, primary);
+    }
+  }
 }
 // button {
 //   all: unset;
@@ -32,24 +31,19 @@ border: 1px solid map-get($colors, primary);
 //   padding: 0.875rem 1.5rem;
 //   min-height: 2.75rem;
 
-
 //   &:focus-visible {
 //     outline: 2px solid #0056b3;
 //     outline-offset: 2px;
 //   }
 // }
 
-
-
-
 // .btn {
 //   // 기본 버튼 스타일 (mixins 버튼 함수 사용)
 //   @include button(red);
-  
+
 //   // 충분한 터치 영역 확보 (접근성 권장 사이즈)
-  
+
 //   padding: 0.875rem 0.5rem;
-  
 
 //   // 터치 시 시각적 피드백 (활성 상태)
 //   &:active {
@@ -69,7 +63,6 @@ border: 1px solid map-get($colors, primary);
 //     outline: 2px solid #0056b3;
 //     outline-offset: 2px;
 //   }
-
 
 // }
 
@@ -114,43 +107,43 @@ border: 1px solid map-get($colors, primary);
 //   }
 // }
 
-
-
-
-
-@import '../base/mixins' ;//mixins 불러오기
+@import "../base/mixins"; //mixins 불러오기
 
 .btn {
-  display:inline-flex;
-  align-items:center;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  border:none;
-  border-radius:0.25rem;
+  border: none;
+  border-radius: 0.25rem;
   font-weight: 500;
-  width:auto;
+  width: auto;
   transition: none; // 모바일 접근성 고려
 
-  background-color:var(--color-primary);
-  color:var(--color-gray000);
-
+  background-color: var(--color-primary);
+  color: var(--color-gray000);
 
   &--secondary {
-    background-color:var(--color-secondary);
-    color:var(--color-gray000);
+    background-color: var(--color-secondary);
+    color: var(--color-gray000);
   }
   &.gray1 {
-    background-color:var(--color-gray900);
-    color:var(--color-gray000);
+    background-color: var(--color-gray900);
+    color: var(--color-gray000);
   }
   &.gray2 {
-    border:1px solid var(--color-gray600);
-    background-color:var(--color-gray000);
-    color:var(--color-gray900);
+    border: 1px solid var(--color-gray600);
+    background-color: var(--color-gray000);
+    color: var(--color-gray900);
   }
 
   //크기적용 mixin
-  &.sm { @include button-size(sm);}
-  &.md { @include button-size(md);}
-  &.lg { @include button-size(lg);}
+  &.sm {
+    @include button-size(sm);
+  }
+  &.md {
+    @include button-size(md);
+  }
+  &.lg {
+    @include button-size(lg);
+  }
 }
-

@@ -1,17 +1,21 @@
 /****** _variables.scss : 프로젝트에서 공통으로 사용할 폰트 크기, 간격 등 변수 정의 ******/
 
-
 //button sizes
-$btn-sizes : (
-    sm: 2rem,
-    md: 2.5rem,
-    lg: 3rem
+$btn-sizes: (
+  sm: 2rem,
+  md: 2.5rem,
+  lg: 3rem,
 );
-
 
 //font sizes
-$btn-font-sizes : (
-    sm: 0.875rem,
-    md: 1rem,
-    lg: 1.125rem
+$btn-font-sizes: (
+  sm: 0.875rem,
+  md: 1rem,
+  lg: 1.125rem,
 );
+
+// 테마 색상 변수 (themes/_themevariables.scss에서 themes를 import한다고 가정)
+@use "../themes/themevariables" as themevars;
+
+// 기본 테마명(light)으로 $colors 변수 선언
+$colors: map-get(themevars.$themes, light);
