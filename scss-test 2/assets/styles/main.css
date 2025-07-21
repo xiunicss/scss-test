@@ -1,0 +1,357 @@
+@charset "UTF-8";
+/****** _variables.scss : 프로젝트에서 공통으로 사용할 폰트 크기, 간격 등 변수 정의 ******/
+/* _mixins.scss : 자주 쓰는 스타일 패턴이나 반복되는 CSS 로직을 재사용하기 위한 SCSS "함수" 모음 */
+/* base/_font.scss : 폰트 */
+/* 400 - Regular */
+@font-face {
+  font-family: "Pretendard";
+  src: url("../../assets/fonts/Pretendard-Regular.woff2") format("woff2"), url("../../assets/fonts/Pretendard-Regular.woff") format("woff"), url("../../assets/fonts/Pretendard-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* 500 - Medium */
+@font-face {
+  font-family: "Pretendard";
+  src: url("../../assets/fonts/Pretendard-Medium.woff2") format("woff2"), url("../../assets/fonts/Pretendard-Medium.woff") format("woff"), url("../../assets/fonts/Pretendard-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* 600 - SemiBold */
+@font-face {
+  font-family: "Pretendard";
+  src: url("../../assets/fonts/Pretendard-SemiBold.woff2") format("woff2"), url("../../assets/fonts/Pretendard-SemiBold.woff") format("woff"), url("../../assets/fonts/Pretendard-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/* 700 - Bold */
+@font-face {
+  font-family: "Pretendard";
+  src: url("../../assets/fonts/Pretendard-Bold.woff2") format("woff2"), url("../../assets/fonts/Pretendard-Bold.woff") format("woff"), url("../../assets/fonts/Pretendard-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* _reset.scss : 브라우저별 기본 스타일 차이를 없애고 동일한 스타일 베이스 만들기 */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* _typography.scss : 기본 텍스트 스타일과 제목, 문단 등 타이포그래피 정의 */
+body {
+  line-height: 1.6;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.375rem;
+  line-height: 140%;
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 135%;
+}
+
+h3 {
+  font-size: 1.125rem;
+  line-height: 138%;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+/* _variables.scss : 테마색상 */
+/* _variables.scss : 테마색상 */
+.theme-light {
+  --color-primary: #1e90ff;
+  --color-secondary: #ff691e;
+  --color-gray900: #111;
+  --color-gray600: #555;
+  --color-gray000: #fff;
+}
+
+.theme-dark {
+  --color-primary: red;
+  --color-background: #111111;
+  --color-text: #eeeeee;
+}
+
+.theme-school {
+  --color-primary: green;
+  --color-background: #fffbe6;
+  --color-text: #222222;
+}
+
+.theme-school1 {
+  --color-primary: yellow;
+  --color-background: #fffbe6;
+  --color-text: #222222;
+}
+
+.theme-school2 {
+  --color-primary: orange;
+  --color-background: #fffbe6;
+  --color-text: #222222;
+}
+
+.theme-school3 {
+  --color-primary: gray;
+  --color-background: #fffbe6;
+  --color-text: #222222;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+.header .logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #007bff;
+}
+.header .header-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header .header-icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #333;
+  padding: 0;
+}
+.header .header-icons button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3.75rem;
+  background-color: #fff;
+  border-radius: 1.5rem 1.5rem 0 0;
+  box-sizing: border-box;
+  z-index: 10;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+.footer .footer-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  width: 2.75rem;
+  padding: 0;
+}
+.footer .footer-tab.active {
+  font-weight: 700;
+}
+.footer .footer-tab.active .icon-school {
+  background-image: url("../images/common/foot_ico_school_on.svg");
+}
+.footer .footer-tab.active .icon-chat {
+  background-image: url("../images/common/foot_ico_chat_on.svg");
+}
+.footer .footer-tab.active .icon-pay {
+  background-image: url("../images/common/foot_ico_pay_on.svg");
+}
+.footer .footer-tab.active .icon-profile {
+  background-image: url("../images/common/foot_ico_profile_on.svg");
+}
+.footer .footer-tab .icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0 0 0.125rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.footer .footer-tab .icon-school {
+  background-image: url("../images/common/foot_ico_school.svg");
+}
+.footer .footer-tab .icon-chat {
+  background-image: url("../images/common/foot_ico_chat.svg");
+}
+.footer .footer-tab .icon-pay {
+  background-image: url("../images/common/foot_ico_pay.svg");
+}
+.footer .footer-tab .icon-profile {
+  background-image: url("../images/common/foot_ico_profile.svg");
+}
+.footer .footer-tab.student-id {
+  position: relative;
+  top: -1.25rem;
+  background-color: #007bff;
+  color: #fff;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+  font-size: 0;
+}
+.footer .footer-tab.student-id .icon-idcard {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-image: url("../images/common/foot_ico_idcard.svg");
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.625rem;
+  box-sizing: border-box;
+}
+@media (max-width: 375px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* _mixins.scss : 자주 쓰는 스타일 패턴이나 반복되는 CSS 로직을 재사용하기 위한 SCSS "함수" 모음 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  width: auto;
+  transition: none;
+  background-color: var(--color-primary);
+  color: var(--color-gray000);
+}
+.btn--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-gray000);
+}
+.btn.gray1 {
+  background-color: var(--color-gray900);
+  color: var(--color-gray000);
+}
+.btn.gray2 {
+  border: 1px solid var(--color-gray600);
+  background-color: var(--color-gray000);
+  color: var(--color-gray900);
+}
+.btn.sm {
+  height: 2rem;
+  font-size: 0.875rem;
+  padding: 0 0.75rem;
+}
+.btn.md {
+  height: 2.5rem;
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+.btn.lg {
+  height: 3rem;
+  font-size: 1.125rem;
+  padding: 0 1.25rem;
+}
+
+.card-wrap .card-tit {
+  margin-bottom: 0.75rem;
+}
+.card-wrap .card-cont {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  z-index: 999;
+}
+.modal .modal-header {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.modal .modal-body {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1.25rem;
+}
+.modal .modal-footer {
+  text-align: right;
+}
+.modal .modal-footer button {
+  margin-left: 0.5rem;
+}
+.modal .modal-footer button:hover {
+  background-color: #0062cc;
+}
+
+.contents {
+  min-height: 100vh;
+  padding: 5rem 1.25rem;
+  background-color: #f9f9f9;
+}

@@ -1,0 +1,13 @@
+
+/* _themes.scss : 테마 css변수생성 */
+
+@use './variables';
+
+@each $theme-name, $colors in variables.$themes {
+  .#{$theme-name} {
+    @each $key, $value in $colors {
+      --color-#{$key}: #{$value};
+    }
+  }
+
+}

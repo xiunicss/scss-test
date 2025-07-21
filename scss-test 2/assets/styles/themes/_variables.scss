@@ -1,0 +1,38 @@
+
+
+/* _variables.scss : 테마색상 */
+
+$themes: (
+  theme-light: (
+    primary: #1e90ff,
+    secondary: #ff691e,
+    gray900: #111,
+    gray600: #555,
+    gray000: #fff
+  ),
+  theme-dark: (
+    primary: red,
+    background: #111111,
+    text: #eeeeee
+  ),
+  theme-school: (
+    primary: green,
+    background: #fffbe6,
+    text: #222222
+  ),
+  theme-school1: (
+    primary: yellow,
+    background: #fffbe6,
+    text: #222222
+  ),
+  theme-school2: (
+    primary: orange,
+    background: #fffbe6,
+    text: #222222
+  ),
+  theme-school3: (
+    primary: gray,
+    background: #fffbe6,
+    text: #222222
+  )
+);

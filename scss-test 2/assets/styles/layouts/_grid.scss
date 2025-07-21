@@ -1,0 +1,22 @@
+// layouts/_grid.scss
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.625rem;
+  box-sizing: border-box;
+
+  @media (max-width: 375px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+
+}
+
+// .grid-item {
+
+  
+
+//   @media (min-width: 768px) {
+//     grid-column: span 4;
+//   }
+// }
