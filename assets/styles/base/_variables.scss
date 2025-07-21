@@ -14,8 +14,3 @@ $btn-font-sizes: (
   lg: 1.125rem,
 );
 
-// 테마 색상 변수 (themes/_variables.scss에서 themes를 import한다고 가정)
-@use "../themes/themevariables" as themevars;
-
-// 기본 테마명(light)으로 $colors 변수 선언
-$colors: map-get(themevars.$themes, light);

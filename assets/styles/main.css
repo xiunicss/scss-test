@@ -427,7 +427,7 @@ p {
 }
 
 /* _themes.scss : 테마 css변수생성 */
-[data-theme=theme-light] {
+[data-theme=light] {
   --color-primary: #1e90ff;
   --color-secondary: #ff691e;
   --color-background: #eeeeee;
@@ -437,7 +437,7 @@ p {
   --color-gray900: #111111;
 }
 
-[data-theme=theme-dark] {
+[data-theme=dark] {
   --color-primary: rgb(122, 122, 185);
   --color-secondary: #ff691e;
   --color-background: #111111;
@@ -447,7 +447,7 @@ p {
   --color-gray900: #f3f3f3;
 }
 
-[data-theme=theme-school] {
+[data-theme=school] {
   --color-primary: green;
   --color-secondary: #ff691e;
   --color-background: #f2d95b;
@@ -457,7 +457,7 @@ p {
   --color-gray900: #111111;
 }
 
-[data-theme=theme-school1] {
+[data-theme=school1] {
   --color-primary: yellow;
   --color-secondary: #ff691e;
   --color-background: #fffbe6;
@@ -467,7 +467,7 @@ p {
   --color-gray900: #111111;
 }
 
-[data-theme=theme-school2] {
+[data-theme=school2] {
   --color-primary: orange;
   --color-secondary: #ff691e;
   --color-background: #fffbe6;
@@ -477,7 +477,7 @@ p {
   --color-gray900: #111111;
 }
 
-[data-theme=theme-school3] {
+[data-theme=school3] {
   --color-primary: gray;
   --color-secondary: #ff691e;
   --color-background: #fffbe6;
@@ -1115,7 +1115,7 @@ p {
   background-color: #f9f9f9;
 }
 
-.theme-switcher button div {
+.switcher button div {
   padding: 8px 16px;
 }
 

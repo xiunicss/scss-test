@@ -34,14 +34,14 @@
   <!-- main content -->
   <main class="contents">
     <!-- <section>
-      <div class="theme-switcher">
-        <button data-theme="theme-light" class="theme-light"> 
+      <div class="switcher">
+        <button data-theme="light" class="light"> 
           <div class="btn btn--primary">라이트</div>
           </button>
-        <button data-theme="theme-dark" class="theme-dark"> 
+        <button data-theme="dark" class="dark"> 
           <div class="btn btn--primary">다크</div>
         </button>
-        <button data-theme="theme-school" class="theme-school">
+        <button data-theme="school" class="school">
           <div class="btn btn--primary">스쿨</div>
         </button>
       </div>
@@ -50,10 +50,16 @@
 
     </section> -->
     <section>
-    <div class="theme-switcher">
-      <button data-theme-select="theme-light">라이트</button>
-      <button data-theme-select="theme-dark">다크</button>
-      <button data-theme-select="theme-school">스쿨</button>
+    <div class="switcher">
+      <button data-select="light">
+        <div class="btn">라이트</div>
+      </button>
+      <button data-select="dark">
+        <div class="btn">다크</div>
+      </button>
+      <button data-select="school">
+        <div class="btn ">스쿨</div>
+      </button>
     </div>
     <div class="school-select">
         <button data-school="sch01" class="btn-school-sl">서울대</button>
@@ -121,9 +127,9 @@ const savedTheme = localStorage.getItem(THEME_KEY) || defaultTheme;
 document.body.setAttribute('data-theme',savedTheme);
 
 // ✅ 테마 선택 버튼 처리
-document.querySelectorAll('[data-theme-select]').forEach(button => {
+document.querySelectorAll('[data-select]').forEach(button => {
   button.addEventListener('click', () => {
-    const selectedTheme = button.getAttribute('data-theme-select');
+    const selectedTheme = button.getAttribute('data-select');
     document.body.setAttribute('data-theme',selectedTheme);
     localStorage.setItem(THEME_KEY, selectedTheme);
   });
@@ -139,7 +145,7 @@ document.querySelectorAll('[data-theme-select]').forEach(button => {
 // if (savedTheme) {
 // document.body.className = savedTheme;
 // } else {
-// document.body.className = 'theme-light'; // 기본 테마
+// document.body.className = 'light'; // 기본 테마
 // }
 
 // // ✅ 버튼 클릭 시 테마 변경 + 저장

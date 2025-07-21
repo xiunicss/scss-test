@@ -83,7 +83,7 @@ p {
 
 /* _variables.scss : 테마색상 */
 /* _variables.scss : 테마색상 */
-.theme-light {
+.light {
   --color-primary: #1e90ff;
   --color-secondary: #ff691e;
   --color-gray900: #111;
@@ -91,31 +91,31 @@ p {
   --color-gray000: #fff;
 }
 
-.theme-dark {
+.dark {
   --color-primary: red;
   --color-background: #111111;
   --color-text: #eeeeee;
 }
 
-.theme-school {
+.school {
   --color-primary: green;
   --color-background: #fffbe6;
   --color-text: #222222;
 }
 
-.theme-school1 {
+.school1 {
   --color-primary: yellow;
   --color-background: #fffbe6;
   --color-text: #222222;
 }
 
-.theme-school2 {
+.school2 {
   --color-primary: orange;
   --color-background: #fffbe6;
   --color-text: #222222;
 }
 
-.theme-school3 {
+.school3 {
   --color-primary: gray;
   --color-background: #fffbe6;
   --color-text: #222222;

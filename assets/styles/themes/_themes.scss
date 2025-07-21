@@ -4,14 +4,14 @@
 
 @use "./_variables" as themevars;
 @each $theme-name, $colors in themevars.$themes {
-  [data-theme="theme-#{$theme-name}"] {
+  [data-theme="#{$theme-name}"] {
     @each $key, $value in $colors {
       --color-#{$key}: #{$value};
     }
   }
 }
 
-// .#{$theme-name} {
+// .#{$name} {
 //     @each $key, $value in $colors {
 //       --color-#{$key}: #{$value};
 //     }
