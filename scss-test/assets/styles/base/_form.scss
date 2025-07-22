@@ -2,11 +2,11 @@
 
 @import '../base/_variables' ;//_variables 불러오기
 
-label {
+input label {
   display:block;
   font-size:$label-font-size;
   margin-bottom:0.5rem;
-  @include visually-hidden;
+  // @include visually-hidden;
 }
 
 
@@ -20,4 +20,56 @@ input, textarea, select {
   &:focus {
     @include focus-outline;
   }
+}
+
+
+
+.form-group {
+margin-bottom: 1.25rem;
+border: none;
+padding: 0;
+
+  .form-label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  }
+
+  .form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+
+  label {
+    font-size: $font-size-h5;
+    color: var(--color-gray900);
+  }
+
+  %style-checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    padding: 0;
+    cursor: pointer;
+  }
+  input[type='radio'] {
+    @include style-checkbox;
+    border-radius: 50%; 
+    border: 5px solid var(--color-gray600);
+    &:checked {
+      border-color: var(--color-primary);
+    } 
+  }
+  input[type='checkbox'] {
+    
+    @include style-checkbox;
+    background: #ddd;
+    border: 2px solid var(--color-gray600);
+  
+    &:checked {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+  }
+}
 }
