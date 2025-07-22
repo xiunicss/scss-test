@@ -94,6 +94,16 @@
 
 @import '../base/mixins' ;//mixins 불러오기
 
+button {
+  border:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content: center;
+  background-color:transparent;
+
+}
+
+
 .btn {
   display:inline-flex;
   align-items:center;
@@ -127,3 +137,30 @@
   &.md { @include button-size(md);}
   &.lg { @include button-size(lg);}
 }
+
+
+
+
+
+
+
+
+// 이미지 
+$icons: (univ, graph, memo, noti,);
+$univ: (univ, img_univ);
+$graph: (graph, img_graph);
+$memo: (memo, img_memo);
+$noti: (noti, img_noti);
+
+@each $icons, $img in $univ, $graph, $memo, $noti {
+  .box-#{$icons} {
+    width:3rem;
+    height:3rem;
+    margin: 0 0 0.25rem;
+    background: url("../images/contents/#{$img}.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+}
+
+

@@ -3,8 +3,8 @@
 
 @use './variables';
 
-@each $name, $colors in variables.$themes {
-  .#{$name} {
+@each $theme-name, $colors in variables.$themes {
+  .#{$theme-name} {
     @each $key, $value in $colors {
       --color-#{$key}: #{$value};
     }

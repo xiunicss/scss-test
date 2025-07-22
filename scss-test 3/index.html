@@ -7,9 +7,9 @@
   <title>SCSS 통합 테스트</title>
   <link rel="stylesheet" href="assets/styles/main.css" />
 </head>
-<body class="light">
-  <div id="container">
-  <!-- header -->
+<body>
+<div id="container">
+<!-- header -->
   <header class="header">
     <div class="logo">MySchool</div>
     <div class="header-icons">
@@ -35,7 +35,7 @@
   <main class="contents">
     <section>
       <div class="card-wrap">
-        <h1 class="card-tit">버튼 테스트</h1>
+        <h3 class="card-tit">&#x2705; 버튼 테스트</h3>
         <div class="card-cont">
           <button type="button" class="btn sm">버튼1</button>
           <button type="button" class="btn btn--secondary md ">버튼1</button>
@@ -43,10 +43,49 @@
           <button type="button" class="btn sm gray2">버튼1</button>
           <button type="button" class="btn">버튼1</button>
         </div>
+      </div>
 
+      <div class="card-wrap">
+        <h3 class="card-tit">&#x2705; 이미지 테스트</h3>
+        <div class="card-cont img-test">
+          <div class="box">
+            <div class="box-graph"></div>
+            <div class="box-text">성적조회</div>
+          </div>
+          <div class="box">
+            <div class="box-univ"></div>
+            <div class="box-text">학사정보</div>
+          </div>
+          <div class="box">
+            <div class="box-memo"></div>
+            <div class="box-text">메모장</div>
+          </div>
+          <div class="box">
+            <div class="box-noti"></div>
+            <div class="box-text">공지사항</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-wrap">
+        <h3 class="card-tit">&#x2705; 텍스트 테스트</h3>
+        <div class="card-cont text-test">
+          <h1>h1텍스트입니다</h1>
+          <h2>h2텍스트입니다</h2>
+          <h3>h3텍스트입니다</h3>
+          <h4>h4텍스트입니다</h4>
+          <h5>h5텍스트입니다</h5>
+          <h6>h6텍스트입니다</h6>
+        </div>
+      </div>
+      <div class="card-wrap">
+        <h3 class="card-tit">&#x2705; form 테스트</h3>
+        <div class="card-cont form-test">
+          <label for="email">이메일:</label> <input type="email" id="email" />
+        </div>
       </div>
     </section>
-   
+  
   </main>
 
   <!-- footer -->
@@ -75,7 +114,7 @@
     </button>
     
   </footer>
-  </div>
+</div>
 </body>
 </html>
 

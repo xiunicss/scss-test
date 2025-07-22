@@ -13,3 +13,11 @@ html, body {
   background-color: #fff;
   color: #333;
 }
+
+
+input, button, textarea, select {
+  font:inherit;
+  border:none;
+  background:none;
+  appearance: none;
+}

@@ -67,3 +67,37 @@
 @mixin shadow($color: rgba(0, 0, 0, 0.1), $blur: 8px) {
   box-shadow: 0 2px $blur $color;
 }
+
+
+// 가운데 정렬
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+
+
+// border-radius 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+@mixin focus-outline {
+  outline: 2px solid $input-focus-border-color;
+  outline-offset: 2px;
+}
+
+@mixin visually-hidden {
+  position:absolute;
+  width: 1px;
+  height:1px;
+  margin:-1px;
+  clip:rect(0 0 0 0);
+  overflow:hidden;
+}

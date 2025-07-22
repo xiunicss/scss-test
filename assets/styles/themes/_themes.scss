@@ -1,8 +1,7 @@
 /* _themes.scss : 테마 css변수생성 */
 
-@use "./_variables";
-
 @use "./_variables" as themevars;
+
 @each $theme-name, $colors in themevars.$themes {
   [data-theme="#{$theme-name}"] {
     @each $key, $value in $colors {

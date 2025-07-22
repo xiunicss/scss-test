@@ -1,0 +1,23 @@
+/* _form.scss : 기본 form 스타일 정의 */
+
+@import '../base/_variables' ;//_variables 불러오기
+
+label {
+  display:block;
+  font-size:$label-font-size;
+  margin-bottom:0.5rem;
+  @include visually-hidden;
+}
+
+
+input, textarea, select {
+  width:100%;
+  padding: $input-padding;
+  font-size: $input-font-size;
+  border:1px solid $input-border-color;
+  border-radius: $input-border-radius;
+
+  &:focus {
+    @include focus-outline;
+  }
+}

@@ -1,3 +1,4 @@
+
 // layouts/_footer.scss
 .footer {
   display: flex;
@@ -26,21 +27,7 @@
     width: 2.75rem;
     padding:0;
 
-    &.active {
-      font-weight: 700;
-      .icon-school {
-        background-image:url("../images/common/foot_ico_school_on.svg")
-      }
-      .icon-chat {
-        background-image:url("../images/common/foot_ico_chat_on.svg")
-      }
-      .icon-pay {
-        background-image:url("../images/common/foot_ico_pay_on.svg")
-      }
-      .icon-profile {
-        background-image:url("../images/common/foot_ico_profile_on.svg")
-      }
-    }
+    
     .icon {
       width:1.75rem;
       height:1.75rem;
@@ -49,18 +36,38 @@
       background-repeat:no-repeat;
       background-position:center;
     }
-    .icon-school {
-      background-image:url("../images/common/foot_ico_school.svg")
+    
+
+
+    // 이미지 
+    $footicons: (school, chat, pay, profile);
+    $school: (school, ico_school);
+    $chat: (chat, ico_chat);
+    $pay: (pay, ico_pay);
+    $profile: (profile, ico_profile);
+
+    @each $footicons, $btmnav in $school, $chat, $pay, $profile {
+      .icon-#{$footicons} {
+        margin: 0 0 0.25rem;
+        background-image: url("../images/common/foot_#{$btmnav}.svg");
+        background-size:contain;
+        background-repeat: no-repeat;
+      }
     }
-    .icon-chat {
-      background-image:url("../images/common/foot_ico_chat.svg")
+
+  &.active {
+    font-weight: 700;
+
+    @each $footicons, $btmnav in $school, $chat, $pay, $profile {
+      .icon-#{$footicons} {
+        background-image: url("../images/common/foot_#{$btmnav}_on.svg");
+        background-size:contain;
+        background-repeat: no-repeat;
+    
+      }
     }
-    .icon-pay {
-      background-image:url("../images/common/foot_ico_pay.svg")
-    }
-    .icon-profile {
-      background-image:url("../images/common/foot_ico_profile.svg")
-    } 
+  }
+
   }
 
   // 학생증 플로팅 버튼 스타일
@@ -91,3 +98,12 @@
      
   }
 }
+
+
+
+
+
+
+
+
+

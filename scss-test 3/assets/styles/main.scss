@@ -7,9 +7,10 @@
 // 3. 폰트 설정 - 폰트를 변수보다 먼저 쓰는 경우 거의 없음, 변수 뒤에
 @import 'base/font';
 
-// 4. 리셋 및 타이포그래피
+// 4. 리셋 및 타이포그래피,form
 @import 'base/reset';
 @import 'base/typography';
+@import 'base/form';
 
 // 5. 테마 (CSS 변수나 다크모드 등 스타일 바리에이션)
 @import 'themes/variables';

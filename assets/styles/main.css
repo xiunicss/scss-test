@@ -1141,7 +1141,7 @@ Button[data-select=school3] div.btn {
   margin-left: 0.5rem;
 }
 .modal .modal-footer button:hover {
-  background-color: #0062cc;
+  background-color: rgb(0, 98.4, 204);
 }
 
 [data-school=sch01] .school-logo {
@@ -1276,6 +1276,50 @@ Button[data-select=school3] div.btn {
   background-color: #1f1f1f;
   border: 1px solid #333;
   box-shadow: none;
+}
+
+.board-item .img-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.board-item .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.board-item .img-box .badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.board-item .text-box {
+  padding: 12px;
+}
+.board-item .post-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: var(--color-text);
+}
+.board-item .post-desc {
+  font-size: 14px;
+  color: var(--color-text);
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+.board-item .post-date {
+  font-size: 12px;
+  color: #999;
 }
 
 .contents {

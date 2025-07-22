@@ -11,7 +11,8 @@
   <div id="container">
   <!-- header -->
   <header class="header">
-    <div class="logo">MySchool</div>
+    <button class="back-button" onclick="history.back()" aria-label="뒤로가기">←</button>
+    <h1>이미지목록</h1>
     <div class="header-icons">
       <button aria-label="알림">
         <!-- 예시 SVG 벨 아이콘 -->
@@ -32,74 +33,87 @@
   </header>
 
   <!-- main content -->
-  <main class="contents">
-    <!-- <section>
-      <div class="switcher">
-        <button data-theme="light" class="light"> 
-          <div class="btn btn--primary">라이트</div>
-          </button>
-        <button data-theme="dark" class="dark"> 
-          <div class="btn btn--primary">다크</div>
-        </button>
-        <button data-theme="school" class="school">
-          <div class="btn btn--primary">스쿨</div>
-        </button>
-      </div>
-      <br>
-      
-
-    </section> -->
-    <section>
-      <div class="card-wrap">
-        <h1 class="card-tit">테마 테스트</h1>
-        <div class="card-cont">
-          <div class="switcher">
-            <button data-select="light">
-              <div class="btn btn--primary">라이트</div>
-            </button>
-            <button data-select="dark">
-              <div class="btn">다크</div>
-            </button>
-            <button data-select="school">
-              <div class="btn">스쿨</div>
-            </button>
-          </div>
+  <main class="contents image-list">
+    <!-- <ul class="image-grid">
+      <li class="image-item">
+        <div class="img-box">
+          <img src="assets/images/logo/sch01.svg" alt="학교 이미지 1" />
         </div>
-      </div>
-      <div class="card-wrap">
-        <h1 class="card-tit">학교 이미지 테스트</h1>
-        <div class="card-cont school-card">
-          <div class="school--select">
-            <button data-school="sch01" class="btn-school-sl">서울대</button>
-            <button data-school="sch02" class="btn-school-sl">서울여대</button>
-            <button data-school="sch03" class="btn-school-sl">한국대</button>
-          </div>
-          <br>
-          <div class="school-logo"></div>
-        </div>  
-      </div>
-      <div class="card-wrap">
-        <h1 class="card-tit">버튼 테스트</h1>
-        <div class="card-cont">
-          <button type="button" class="btn sm">버튼1</button>
-          <button type="button" class="btn btn--primary md" >버튼1</button>
-          <button type="button" class="btn btn--secondary md">버튼1</button>
-          <button type="button" class="btn lg gray1">버튼1</button>
-          <button type="button" class="btn sm gray2">버튼1</button>
-          <button type="button" class="btn">버튼1</button>
+        <div class="image-caption">학교 이미지 1</div>
+      </li>
+      <li class="image-item">
+        <div class="img-box">
+          <img src="assets/images/logo/sch02.svg" alt="학교 이미지 2" />
         </div>
-
-      </div>
-      <div class="card-wrap">
-        <h1 class="card-tit">페이지 테스트</h1>
-        <div class="card-cont page-card">
-          <a href="lecture-list.html" class="link-go">▸ lecture-list Go</a>
-          <a href="image-list.html" class="link-go">▸ image-list Go</a>
-         </div>
-      </div>
-    </section>
-    
-   
+        <div class="image-caption">학교 이미지 2</div>
+      </li>
+      <li class="image-item">
+        <div class="img-box">
+          <img src="assets/images/logo/sch01.svg" alt="학교 이미지 1" />
+        </div>
+        <div class="image-caption">학교 이미지 1</div>
+      </li>
+      <li class="image-item">
+        <div class="img-box">
+          <img src="assets/images/logo/sch02.svg" alt="학교 이미지 2" />
+        </div>
+        <div class="image-caption">학교 이미지 2</div>
+      </li>
+    </ul> -->
+    <ul class="image-board">
+      <li class="board-item">
+        <a href="/detail.html" class="board-link" aria-label="자세히 보기: 여름 학교 행사 사진">
+        <div class="img-box">
+          <img src="assets/images/logo/sch01.svg" alt="여름 학교 행사 사진" />
+          <span class="badge">NEW</span>
+        </div>
+        <div class="text-box">
+          <h3 class="post-title">여름 학교 행사</h3>
+          <p class="post-desc">햇살 좋은 날 진행한 야외 체육대회 현장입니다.</p>
+          <time class="post-date" datetime="2025-07-15">2025.07.15</time>
+        </div>
+        </a>
+      </li>
+      <li class="board-item">
+        <a href="/detail.html" class="board-link" aria-label="자세히 보기: 여름 학교 행사 사진">
+        <div class="img-box">
+          <img src="assets/images/logo/sch01.svg" alt="여름 학교 행사 사진" />
+          <span class="badge">NEW</span>
+        </div>
+        <div class="text-box">
+          <h3 class="post-title">여름 학교 행사</h3>
+          <p class="post-desc">햇살 좋은 날 진행한 야외 체육대회 현장입니다.</p>
+          <time class="post-date" datetime="2025-07-15">2025.07.15</time>
+        </div>
+        </a>
+      </li>
+      <li class="board-item">
+        <a href="/detail.html" class="board-link" aria-label="자세히 보기: 여름 학교 행사 사진">
+        <div class="img-box">
+          <img src="assets/images/logo/sch01.svg" alt="여름 학교 행사 사진" />
+          <span class="badge">NEW</span>
+        </div>
+        <div class="text-box">
+          <h3 class="post-title">여름 학교 행사</h3>
+          <p class="post-desc">햇살 좋은 날 진행한 야외 체육대회 현장입니다.</p>
+          <time class="post-date" datetime="2025-07-15">2025.07.15</time>
+        </div>
+        </a>
+      </li>
+      <li class="board-item">
+        <a href="/detail.html" class="board-link" aria-label="자세히 보기: 여름 학교 행사 사진">
+        <div class="img-box">
+          <img src="assets/images/logo/sch01.svg" alt="여름 학교 행사 사진" />
+          <span class="badge">NEW</span>
+        </div>
+        <div class="text-box">
+          <h3 class="post-title">여름 학교 행사</h3>
+          <p class="post-desc">햇살 좋은 날 진행한 야외 체육대회 현장입니다.</p>
+          <time class="post-date" datetime="2025-07-15">2025.07.15</time>
+        </div>
+        </a>
+      </li>
+    </ul>
   </main>
 
   <!-- footer -->
@@ -129,10 +143,6 @@
     
   </footer>
   </div>
-  <style>
-    .card-cont.page-card {flex-direction: column;}
-    .page-card .link-go {display: block;}
-  </style>
 </body>
 
 <script>
