@@ -1,0 +1,166 @@
+// button {
+//   all: unset;
+//   cursor: pointer;
+//   text-align: center;
+//   user-select: none;
+//   padding: 0.875rem 1.5rem;
+//   min-height: 2.75rem;
+
+
+//   &:focus-visible {
+//     outline: 2px solid #0056b3;
+//     outline-offset: 2px;
+//   }
+// }
+
+
+
+
+// .btn {
+//   // 기본 버튼 스타일 (mixins 버튼 함수 사용)
+//   @include button(red);
+  
+//   // 충분한 터치 영역 확보 (접근성 권장 사이즈)
+  
+//   padding: 0.875rem 0.5rem;
+  
+
+//   // 터치 시 시각적 피드백 (활성 상태)
+//   &:active {
+//     background-color: darken(#007bff, 10%);
+//     transform: scale(0.97);
+//     transition: transform 0.1s ease;
+//   }
+
+//   // 키보드·보조기기용 포커스 가시성
+//   &:focus-visible {
+//     outline: 3px solid #005fcc;
+//     outline-offset: 2px;
+//   }
+
+//   // 보조기기나 일부 브라우저 포커스 처리 보완용
+//   &:focus {
+//     outline: 2px solid #0056b3;
+//     outline-offset: 2px;
+//   }
+
+
+// }
+
+// // 추가 버튼 타입 예시 — Secondary, Danger 등
+// .btn-secondary {
+//   @include button(#6c757d);
+
+//   &:active {
+//     background-color: darken(#6c757d, 10%);
+//     transform: scale(0.97);
+//     transition: transform 0.1s ease;
+//   }
+
+//   &:focus-visible {
+//     outline: 3px solid darken(#6c757d, 15%);
+//     outline-offset: 2px;
+//   }
+
+//   &:focus {
+//     outline: 2px solid darken(#6c757d, 20%);
+//     outline-offset: 2px;
+//   }
+// }
+
+// .btn-danger {
+//   background-color:var(--color-primary);
+
+//   &:active {
+//     background-color: darken(#dc3545, 10%);
+//     transform: scale(0.97);
+//     transition: transform 0.1s ease;
+//   }
+
+//   &:focus-visible {
+//     outline: 3px solid darken(#dc3545, 15%);
+//     outline-offset: 2px;
+//   }
+
+//   &:focus {
+//     outline: 2px solid darken(#dc3545, 20%);
+//     outline-offset: 2px;
+//   }
+// }
+
+
+
+
+
+@import '../base/mixins' ;//mixins 불러오기
+
+button {
+  border:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content: center;
+  background-color:transparent;
+
+}
+
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content: center;
+  border:none;
+  border-radius:0.25rem;
+  font-weight: 500;
+  width:auto;
+  transition: none; // 모바일 접근성 고려
+
+  background-color:var(--color-primary);
+  color:var(--color-gray000);
+
+
+  &--secondary {
+    background-color:var(--color-secondary);
+    color:var(--color-gray000);
+  }
+  &.gray1 {
+    background-color:var(--color-gray900);
+    color:var(--color-gray000);
+  }
+  &.gray2 {
+    border:1px solid var(--color-gray600);
+    background-color:var(--color-gray000);
+    color:var(--color-gray900);
+  }
+
+  //크기적용 mixin
+  &.sm { @include button-size(sm);}
+  &.md { @include button-size(md);}
+  &.lg { @include button-size(lg);}
+}
+
+
+
+
+
+
+
+
+// 이미지 
+$icons: (univ, graph, memo, noti,);
+$univ: (univ, img_univ);
+$graph: (graph, img_graph);
+$memo: (memo, img_memo);
+$noti: (noti, img_noti);
+
+@each $icons, $img in $univ, $graph, $memo, $noti {
+  .box-#{$icons} {
+    width:3rem;
+    height:3rem;
+    margin: 0 0 0.25rem;
+    background: url("../images/contents/#{$img}.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+}
+
+

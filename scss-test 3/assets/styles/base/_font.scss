@@ -1,0 +1,21 @@
+// /* base/_font.scss : 폰트 */
+
+$font-weights : (
+  400: 'Regular',
+  500: 'Medium',
+  600: 'SemiBold',
+  700: 'Bold'
+);
+
+@each $weight, $name in $font-weights {
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('../../assets/fonts/Pretendard-#{$name}.woff2') format('woff2'),
+        url('../../assets/fonts/Pretendard-#{$name}.woff') format('woff'),
+        url('../../assets/fonts/Pretendard-#{$name}.ttf') format('truetype');
+    font-weight: #{$weight};
+    font-style: normal;
+    font-display: swap;
+  }
+
+}

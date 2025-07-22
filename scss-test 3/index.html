@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SCSS 통합 테스트</title>
+  <link rel="stylesheet" href="assets/styles/main.css" />
+</head>
+<body>
+<div id="container">
+<!-- header -->
+  <header class="header">
+    <div class="logo">MySchool</div>
+    <div class="header-icons">
+      <button aria-label="알림">
+        <!-- 예시 SVG 벨 아이콘 -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+      </button>
+      <button aria-label="전체 메뉴">
+        <!-- 햄버거 아이콘 -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- main content -->
+  <main class="contents">
+    <section>
+      <div class="card-wrap">
+        <h3 class="card-tit">&#x2705; 버튼 테스트</h3>
+        <div class="card-cont">
+          <button type="button" class="btn sm">버튼1</button>
+          <button type="button" class="btn btn--secondary md ">버튼1</button>
+          <button type="button" class="btn lg gray1">버튼1</button>
+          <button type="button" class="btn sm gray2">버튼1</button>
+          <button type="button" class="btn">버튼1</button>
+        </div>
+      </div>
+
+      <div class="card-wrap">
+        <h3 class="card-tit">&#x2705; 이미지 테스트</h3>
+        <div class="card-cont img-test">
+          <div class="box">
+            <div class="box-graph"></div>
+            <div class="box-text">성적조회</div>
+          </div>
+          <div class="box">
+            <div class="box-univ"></div>
+            <div class="box-text">학사정보</div>
+          </div>
+          <div class="box">
+            <div class="box-memo"></div>
+            <div class="box-text">메모장</div>
+          </div>
+          <div class="box">
+            <div class="box-noti"></div>
+            <div class="box-text">공지사항</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-wrap">
+        <h3 class="card-tit">&#x2705; 텍스트 테스트</h3>
+        <div class="card-cont text-test">
+          <h1>h1텍스트입니다</h1>
+          <h2>h2텍스트입니다</h2>
+          <h3>h3텍스트입니다</h3>
+          <h4>h4텍스트입니다</h4>
+          <h5>h5텍스트입니다</h5>
+          <h6>h6텍스트입니다</h6>
+        </div>
+      </div>
+      <div class="card-wrap">
+        <h3 class="card-tit">&#x2705; form 테스트</h3>
+        <div class="card-cont form-test" style="flex-direction: column;">
+          <!-- <label for="email">이메일:</label> <input type="email" id="email" /> -->
+
+          <fieldset class="form-group">
+            <legend class="form-label">강아지 vs 고양이</legend>
+            <div class="form-check">
+              <input type="radio" id="dog" name="pet" value="dog" class="form-radio" aria-checked="false"/>
+              <label for="dog">강아지</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="cat" name="pet" value="cat" class="form-radio" aria-checked="false" />
+              <label for="cat">고양이</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend class="form-label">이용약관</legend>
+            <div class="form-check">
+              <input type="checkbox" id="agree-all" name="agree-all" class="form-checkbox" aria-checked="false" />
+              <label for="agree-all">전체 이용약관에 동의합니다.</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="agree-terms" name="agree-terms" class="form-checkbox" aria-checked="false" />
+              <label for="agree-terms">이용약관에 동의합니다.</label>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="agree-marketing" name="agree-marketing" class="form-checkbox" aria-checked="false" />
+              <label for="agree-marketing">마케팅 정보 수신에 동의합니다.</label>
+            </div>
+        </div>
+      </div>
+    </section>
+  
+  </main>
+
+  <!-- footer -->
+  <footer class="footer" role="navigation" aria-label="하단 메뉴">
+    <button type="button" class="footer-tab active" aria-label="학사">
+      <div class="icon icon-school"></div>
+      <div class="text">학사</div>
+    </button>
+    <button type="button" class="footer-tab" aria-label="채팅">
+      <div class="icon icon-chat"></div>
+      <div class="text">채팅</div>
+    </button>
+    <button type="button" class="footer-tab student-id btn-lg-[r]" aria-label="학생증">
+      <div class="icon icon-idcard"></div>
+      <div class="text">학생증</div>
+    </button>
+
+    <button type="button" class="footer-tab" aria-label="페이">
+      <div class="icon icon-pay"></div>
+      <div class="text">페이</div>
+    </button>
+
+    <button type="button" class="footer-tab" aria-label="프로필">
+      <div class="icon icon-profile"></div>
+      <div class="text">프로필</div>
+    </button>
+    
+  </footer>
+</div>
+</body>
+</html>
+
+
