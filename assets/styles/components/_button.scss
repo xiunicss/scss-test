@@ -3,9 +3,9 @@
 @import "../base/variables";
 @import "../base/mixins";
 
-.btn--primary {
-  @include button(map-get($colors, primary), #fff);
-}
+// .btn--primary {
+//   @include button(map-get($colors, primary), #fff);
+// }
 
 @each $theme-name, $colors in $themes {
   [data-theme="#{$theme-name}"] {

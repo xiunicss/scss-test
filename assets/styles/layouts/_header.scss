@@ -13,6 +13,8 @@
   padding: 0 1rem;
   box-sizing: border-box;
   z-index: 1000;
+  color: var(--color-gray900);
+  
 
   .logo {
     font-weight: 700;
@@ -32,7 +34,7 @@
       cursor: pointer;
       width: 1.5rem;
       height: 1.5rem;
-      color: #333;
+      color: var(--color-gray900);
       padding:0;
 
       svg {
@@ -40,5 +42,9 @@
         height: 100%;
       }
     }
+  }
+  .back-button{
+    font-size: 18px;
+    color: var(--color-gray900);
   }
 }

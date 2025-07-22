@@ -56,21 +56,22 @@ $themes: (
 );
 
 
-//작동 안되는중
 //테마 스위처 버튼 컬러정의
 $button-theme-colors: (
-light: (#ffffff, #000),
-dark: (#1c1c1c, #fff)
+  light: (#45a2ff, #000),
+  dark: (#1c1c1c, #fff),
+  school: (#24cc35, #fff),
+  school1: (#fcbc3c, #fff),
+  school2: (#ac8512, #fff),
+  school3: (#ff4583, #fff)
 );
 //테마 스위처 버튼
-@each $key, $colors in $button-theme-colors {
-Button[data-select="#{$key}"] div.btn {
-background-color: nth($colors, 1);
-color: nth($colors, 2);
+@each $key, $btncolors in $button-theme-colors {
+  Button[data-select="#{$key}"] div.btn {
+    background-color: nth($btncolors, 1);
+    color: nth($btncolors, 2);
+  }
 }
-}
-button.reset{background: #000;}
-
 
 // // 기본 테마명(light)으로 $colors 변수 선언
 // $colors: map-get(themevars.$themes, light);

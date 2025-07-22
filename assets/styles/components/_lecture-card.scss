@@ -1,0 +1,35 @@
+
+@use '../themes/school.scss';
+
+
+.lecture-card {
+  padding: 16px;
+  border-radius: 12px;
+  background-color:#f4e4e4;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  margin-bottom: 16px;
+
+  display: flex;
+  flex-direction: column;
+  color: var(--color-gray900);
+  gap: 6px;
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  &__info {opacity: 0.8; }
+
+  .brn {
+    align-self: flex-start;
+    padding: 6ox 12px;
+  }
+
+  //다크모드 대응
+  [data-theme="dark"] & {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    box-shadow: none;
+  }
+}
+ 
+

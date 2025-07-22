@@ -11,7 +11,8 @@
   <div id="container">
   <!-- header -->
   <header class="header">
-    <div class="logo">MySchool</div>
+    <button class="back-button" onclick="history.back()" aria-label="뒤로가기">←</button>
+    <h1>전체 공지사항</h1>
     <div class="header-icons">
       <button aria-label="알림">
         <!-- 예시 SVG 벨 아이콘 -->
@@ -32,67 +33,27 @@
   </header>
 
   <!-- main content -->
-  <main class="contents">
-    <!-- <section>
-      <div class="switcher">
-        <button data-theme="light" class="light"> 
-          <div class="btn btn--primary">라이트</div>
-          </button>
-        <button data-theme="dark" class="dark"> 
-          <div class="btn btn--primary">다크</div>
-        </button>
-        <button data-theme="school" class="school">
-          <div class="btn btn--primary">스쿨</div>
-        </button>
-      </div>
-      <br>
-      
-
-    </section> -->
-    <section>
-      <div class="card-wrap">
-        <h1 class="card-tit">테마 테스트</h1>
-        <div class="card-cont">
-          <div class="switcher">
-            <button data-select="light">
-              <div class="btn">라이트</div>
-            </button>
-            <button data-select="dark">
-              <div class="btn">다크</div>
-            </button>
-            <button data-select="school">
-              <div class="btn">스쿨</div>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card-wrap">
-        <h1 class="card-tit">학교 이미지 테스트</h1>
-        <div class="card-cont school-card">
-          <div class="school--select">
-            <button data-school="sch01" class="btn-school-sl">서울대</button>
-            <button data-school="sch02" class="btn-school-sl">서울여대</button>
-            <button data-school="sch03" class="btn-school-sl">한국대</button>
-          </div>
-          <br>
-          <div class="school-logo"></div>
-        </div>  
-      </div>
-      <div class="card-wrap">
-        <h1 class="card-tit">버튼 테스트</h1>
-        <div class="card-cont">
-          <button type="button" class="btn sm">버튼1</button>
-          <button type="button" class="btn btn--primary md" >버튼1</button>
-          <button type="button" class="btn btn--secondary md">버튼1</button>
-          <button type="button" class="btn lg gray1">버튼1</button>
-          <button type="button" class="btn sm gray2">버튼1</button>
-          <button type="button" class="btn">버튼1</button>
-        </div>
-
-      </div>
-    </section>
-    <a href="lecture-list.html" class="link">lecture-list Go</a>
-   
+  <main class="contents notice-page">
+   <ul class="notice-page__list">
+    <li class="notice-page__item">
+      <a href="#" class="notice-page__link">
+        🏴 3월 시험범위가 업데이트되었습니다.
+        <span class="notice-date">2025.03.01</span>
+      </a>
+    </li>
+    <li class="notice-page__item">
+      <a href="#" class="notice-page__link">
+        🏴 시스템 점검안내 10시
+        <span class="notice-date">2025.03.05</span>
+      </a>
+    </li>
+    <li class="notice-page__item">
+      <a href="#" class="notice-page__link">
+        🏴 1학기 기말고사 일정 공지
+        <span class="notice-date">2025.03.05</span>
+      </a>
+    </li>
+   </ul>
   </main>
 
   <!-- footer -->

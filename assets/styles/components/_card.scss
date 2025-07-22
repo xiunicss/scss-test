@@ -13,5 +13,8 @@
     padding: 1rem;
     @include flex(flex-start, flex-start);
     box-sizing: border-box;
+    &.school-card {
+      flex-direction: column;
+    }
   }
 }

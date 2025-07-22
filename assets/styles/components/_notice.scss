@@ -1,0 +1,30 @@
+.notice-section {
+  margin-top: 32px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+
+  &__title{
+    font-weight: 700;
+    margin-bottom: 12px;
+    color:var(--color-gray900);
+  }
+  .notice-list{
+    list-style: none;
+    padding: 0;
+    bottom: 0;
+  }
+  .notice-item + .notice-item {
+    margin-top: 8px;
+  }
+  .notice-link {
+    font-size: 14px;
+    color: var(--color-600);
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

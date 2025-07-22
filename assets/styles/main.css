@@ -159,8 +159,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -426,7 +425,66 @@ p {
   color: #555;
 }
 
-/* _themes.scss : 테마 css변수생성 */
+Button[data-select=light] div.btn {
+  background-color: #45a2ff;
+  color: #000;
+}
+
+Button[data-select=dark] div.btn {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+Button[data-select=school] div.btn {
+  background-color: #24cc35;
+  color: #fff;
+}
+
+Button[data-select=school1] div.btn {
+  background-color: #fcbc3c;
+  color: #fff;
+}
+
+Button[data-select=school2] div.btn {
+  background-color: #ac8512;
+  color: #fff;
+}
+
+Button[data-select=school3] div.btn {
+  background-color: #ff4583;
+  color: #fff;
+}
+
+Button[data-select=light] div.btn {
+  background-color: #45a2ff;
+  color: #000;
+}
+
+Button[data-select=dark] div.btn {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+Button[data-select=school] div.btn {
+  background-color: #24cc35;
+  color: #fff;
+}
+
+Button[data-select=school1] div.btn {
+  background-color: #fcbc3c;
+  color: #fff;
+}
+
+Button[data-select=school2] div.btn {
+  background-color: #ac8512;
+  color: #fff;
+}
+
+Button[data-select=school3] div.btn {
+  background-color: #ff4583;
+  color: #fff;
+}
+
 [data-theme=light] {
   --color-primary: #1e90ff;
   --color-secondary: #ff691e;
@@ -488,52 +546,39 @@ p {
 }
 
 [data-school=sch01] .school-logo {
-  background-image: url("../../assets/images/logo/sch01.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 80px;
-  height: 80px;
+  background: url("../../assets/images/logo/sch01.svg");
+}
+
+.school-Symbol.sch01 {
+  background-image: url("../../assets/images/logo/sch01_symbol.svg");
 }
 
 [data-school=sch02] .school-logo {
-  background-image: url("../../assets/images/logo/sch02.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 80px;
-  height: 80px;
+  background: url("../../assets/images/logo/sch02.svg");
+}
+
+.school-Symbol.sch02 {
+  background-image: url("../../assets/images/logo/sch02_symbol.svg");
 }
 
 [data-school=sch03] .school-logo {
-  background-image: url("../../assets/images/logo/sch03.svg");
+  background: url("../../assets/images/logo/sch03.svg");
+}
+
+.school-Symbol.sch03 {
+  background-image: url("../../assets/images/logo/sch03_symbol.svg");
+}
+
+[data-school=sch01] .school-logo, [data-school=sch02] .school-logo, [data-school=sch03] .school-logo {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   width: 80px;
   height: 80px;
+  display: block;
 }
 
-.school-Symbol.schSymbol01 {
-  background-image: url("../../assets/images/logo/sch_Symbol01.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 80px;
-  height: 80px;
-}
-
-.school-Symbol.schSymbol02 {
-  background-image: url("../../assets/images/logo/sch_Symbol02.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 80px;
-  height: 80px;
-}
-
-.school-Symbol.schSymbol03 {
-  background-image: url("../../assets/images/logo/sch_Symbol03.svg");
+.school-Symbol.sch01, .school-Symbol.sch02, .school-Symbol.sch03 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -555,6 +600,7 @@ p {
   padding: 0 1rem;
   box-sizing: border-box;
   z-index: 1000;
+  color: var(--color-gray900);
 }
 .header .logo {
   font-weight: 700;
@@ -572,12 +618,16 @@ p {
   cursor: pointer;
   width: 1.5rem;
   height: 1.5rem;
-  color: #333;
+  color: var(--color-gray900);
   padding: 0;
 }
 .header .header-icons button svg {
   width: 100%;
   height: 100%;
+}
+.header .back-button {
+  font-size: 18px;
+  color: var(--color-gray900);
 }
 
 .footer {
@@ -682,24 +732,6 @@ p {
 
 /****** _variables.scss : 프로젝트에서 공통으로 사용할 폰트 크기, 간격 등 변수 정의 ******/
 /* _mixins.scss : 자주 쓰는 스타일 패턴이나 반복되는 CSS 로직을 재사용하기 위한 SCSS "함수" 모음 */
-.btn--primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #1e90ff;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-.btn--primary:hover {
-  opacity: 0.9;
-}
-
 [data-theme=light] .btn--primary {
   display: inline-flex;
   align-items: center;
@@ -1074,6 +1106,9 @@ p {
   justify-content: flex-start;
   box-sizing: border-box;
 }
+.card-wrap .card-cont.school-card {
+  flex-direction: column;
+}
 
 .modal {
   position: fixed;
@@ -1107,6 +1142,140 @@ p {
 }
 .modal .modal-footer button:hover {
   background-color: #0062cc;
+}
+
+[data-school=sch01] .school-logo {
+  background: url("../../assets/images/logo/sch01.svg");
+}
+
+.school-Symbol.sch01 {
+  background-image: url("../../assets/images/logo/sch01_symbol.svg");
+}
+
+[data-school=sch02] .school-logo {
+  background: url("../../assets/images/logo/sch02.svg");
+}
+
+.school-Symbol.sch02 {
+  background-image: url("../../assets/images/logo/sch02_symbol.svg");
+}
+
+[data-school=sch03] .school-logo {
+  background: url("../../assets/images/logo/sch03.svg");
+}
+
+.school-Symbol.sch03 {
+  background-image: url("../../assets/images/logo/sch03_symbol.svg");
+}
+
+[data-school=sch01] .school-logo, [data-school=sch02] .school-logo, [data-school=sch03] .school-logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+.school-Symbol.sch01, .school-Symbol.sch02, .school-Symbol.sch03 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+}
+
+.lecture-card {
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #f4e4e4;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-gray900);
+  gap: 6px;
+}
+.lecture-card__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.lecture-card__info {
+  opacity: 0.8;
+}
+.lecture-card .brn {
+  align-self: flex-start;
+  padding: 6ox 12px;
+}
+[data-theme=dark] .lecture-card {
+  background-color: #1f1f1f;
+  border: 1px solid #333;
+  box-shadow: none;
+}
+
+.notice-section {
+  margin-top: 32px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+}
+.notice-section__title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-gray900);
+}
+.notice-section .notice-list {
+  list-style: none;
+  padding: 0;
+  bottom: 0;
+}
+.notice-section .notice-item + .notice-item {
+  margin-top: 8px;
+}
+.notice-section .notice-link {
+  font-size: 14px;
+  color: var(--color-600);
+  text-decoration: none;
+  display: block;
+}
+.notice-section .notice-link:hover {
+  text-decoration: underline;
+}
+
+.notice-page {
+  padding: 16px;
+  color: var(--color-gray900);
+}
+.notice-page__list {
+  list-style: none;
+  padding: 0;
+}
+.notice-page__item + .notice-page__item {
+  margin-top: 12px;
+}
+.notice-page__link {
+  display: block;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-gray900);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+.notice-page__link .notice-date {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-top: 4px;
+}
+.notice-page__link:hover {
+  background-color: #f7f7f7;
+}
+[data-theme=dark] .notice-page__link {
+  background-color: #1f1f1f;
+  border: 1px solid #333;
+  box-shadow: none;
 }
 
 .contents {

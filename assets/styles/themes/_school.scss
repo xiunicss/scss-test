@@ -1,31 +1,31 @@
 $school-logos: (
-  sch01: '../../assets/images/logo/sch01.svg',
-  sch02: '../../assets/images/logo/sch02.svg',
-  sch03: '../../assets/images/logo/sch03.svg'
+  sch01: 'sch01',
+  sch02: 'sch02',
+  sch03: 'sch03'
 );
 
-$school-symbol: (
-  schSymbol01: '../../assets/images/logo/sch_Symbol01.svg',
-  schSymbol02: '../../assets/images/logo/sch_Symbol02.svg',
-  schSymbol03: '../../assets/images/logo/sch_Symbol03.svg'
-);
 
 //반복문으로 css생성
 @each $code, $url in $school-logos {
   [data-school="#{$code}"] .school-logo {
-    background-image: url("#{$url}");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 80px;height: 80px;
+    @extend %school-logo;
+    background: url("../../assets/images/logo/#{$url}.svg");
+  };
+  .school-Symbol.#{$code} {
+    @extend %school-symbol;
+    background-image: url("../../assets/images/logo/#{$url}_symbol.svg");
   }
 }
-@each $code, $url in $school-symbol {
-  .school-Symbol.#{$code} {
-    background-image: url("#{$url}");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 80px;height: 80px;
-  }
+%school-logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80px;height: 80px;
+  display: block;
+}
+%school-symbol{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80px;height: 80px;
 }
