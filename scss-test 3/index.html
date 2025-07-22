@@ -80,38 +80,112 @@
       </div>
       <div class="card-wrap">
         <h3 class="card-tit">&#x2705; form 테스트</h3>
-        <div class="card-cont form-test" style="flex-direction: column;">
-          <!-- <label for="email">이메일:</label> <input type="email" id="email" /> -->
-
-          <fieldset class="form-group">
-            <legend class="form-label">강아지 vs 고양이</legend>
-            <div class="form-check">
-              <input type="radio" id="dog" name="pet" value="dog" class="form-radio" aria-checked="false"/>
-              <label for="dog">강아지</label>
-            </div>
-            <div class="form-check">
-              <input type="radio" id="cat" name="pet" value="cat" class="form-radio" aria-checked="false" />
-              <label for="cat">고양이</label>
-            </div>
-          </fieldset>
-
-          <fieldset class="form-group">
-            <legend class="form-label">이용약관</legend>
-            <div class="form-check">
-              <input type="checkbox" id="agree-all" name="agree-all" class="form-checkbox" aria-checked="false" />
-              <label for="agree-all">전체 이용약관에 동의합니다.</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="agree-terms" name="agree-terms" class="form-checkbox" aria-checked="false" />
-              <label for="agree-terms">이용약관에 동의합니다.</label>
-            </div>
-
-            <div class="form-check">
-              <input type="checkbox" id="agree-marketing" name="agree-marketing" class="form-checkbox" aria-checked="false" />
-              <label for="agree-marketing">마케팅 정보 수신에 동의합니다.</label>
-            </div>
+        <div class="card-cont form-test">
+          <div class="form-field">
+            <label for="email">이메일</label>
+            <input type="email" id="email" placeholder="이메일을 입력하세요" />
+          </div>
+          <div class="form-field">
+            <label for="email">이메일</label>
+            <input type="email" id="email" placeholder="이메일을 입력하세요" disabled value="asdfadf@naver.com">
+          </div>
+          <div class="form-field error">
+            <label for="email">이메일</label>
+            <input type="email" id="email" placeholder="이메일을 입력하세요" />
+          </div>
+          <div class="form-field">
+            <label for="textarea">서술형</label>
+            <textarea placeholder="서술형기입이에요" id="textarea"></textarea>
+          </div>
         </div>
       </div>
+
+
+      <div class="card-wrap">
+
+        <h3 class="card-tit">&#x2705; form 테스트</h3>
+
+        <div class="card-cont form-test" style="flex-direction: column;">
+
+          <!-- <label for="email">이메일:</label> <input type="email" id="email" /> -->
+
+
+
+          <fieldset class="form-group">
+
+            <legend class="form-label">라디오 테스트</legend>
+
+            <div class="form-check">
+
+              <input type="radio" id="chek01" name="menuselect" value="chek01" class="form-radio" aria-checked="false"/>
+
+              <label for="chek01">선택1</label>
+
+            </div>
+
+            <div class="form-check">
+
+              <input type="radio" id="chek02" name="menuselect" value="chek02" class="form-radio" aria-checked="false" />
+
+              <label for="chek02">선택2</label>
+
+            </div>
+
+            <div class="form-check">
+
+              <input type="radio" id="chek03" name="menuselect" value="chek03" class="form-radio" aria-checked="false" disabled/>
+
+              <label for="chek03">disabled</label>
+
+            </div>
+
+          </fieldset>
+
+
+
+          <fieldset class="form-group">
+
+            <legend class="form-label">체크박스 테스트</legend>
+
+            <div class="form-check">
+
+              <input type="checkbox" id="agree-all" name="agree-all" class="form-checkbox" aria-checked="false" />
+
+              <label for="agree-all">전체 이용약관에 동의합니다.</label>
+
+            </div>
+
+            <div class="form-check">
+
+              <input type="checkbox" id="agree-terms" name="agree-terms" class="form-checkbox" aria-checked="false" />
+
+              <label for="agree-terms">이용약관에 동의합니다.</label>
+
+            </div>
+
+
+
+            <div class="form-check">
+
+              <input type="checkbox" id="agree-marketing" name="agree-marketing" class="form-checkbox" aria-checked="false" />
+
+              <label for="agree-marketing">마케팅 정보 수신에 동의합니다.</label>
+
+            </div>
+
+            <div class="form-check">
+
+              <input type="checkbox" id="no-agree" name="no-agree" class="form-checkbox" aria-checked="false" disabled/>
+
+              <label for="no-agree">disabled</label>
+
+            </div>
+
+        </div>
+
+      </div>
+
+
     </section>
   
   </main>

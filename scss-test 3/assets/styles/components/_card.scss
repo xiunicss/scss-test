@@ -28,7 +28,8 @@
     }
   }
 
-  .text-test {
+  .text-test,
+  .form-test {
     @include flex(flex-start, center, column);
 
     > * + * {

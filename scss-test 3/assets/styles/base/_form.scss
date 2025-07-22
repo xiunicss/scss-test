@@ -2,96 +2,220 @@
 
 @import '../base/_variables' ;//_variables 불러오기
 
-input label {
+label {
   display:block;
-  font-size:$label-font-size;
-  margin-bottom:0.5rem;
-  // @include visually-hidden;
+  font-size:0.875rem;
 }
 
 
 input, textarea, select {
   width:100%;
-  padding: $input-padding;
-  font-size: $input-font-size;
-  border:1px solid $input-border-color;
-  border-radius: $input-border-radius;
+  padding: $form-element-padding;
+  font-size: $form-element-font-size;
+  border:1px solid $form-element-default-border;
+  border-radius: $form-element-radius;
+  background-color:$form-element-bg;
 
+  &::placeholder {
+    color:$form-element-placeholder;
+  }
   &:focus {
+    border-color:$form-element-focus-border;
     @include focus-outline;
   }
+  &:disabled {
+    background-color:$form-element-disabled-bg;
+    color:$form-element-disabled-color;
+    cursor: not-allowed;
+  }
+
 }
-
-
 
 .form-group {
   margin-bottom: 1.25rem;
   border: none;
   padding: 0;
 
-    .form-label {
+  .form-label {
+
     font-weight: bold;
-    margin-bottom: 0.5rem;
+
     display: block;
+
     }
+
+
 
     .form-check {
+
     display: flex;
+
     align-items: center;
+
     gap: 0.5rem;
+
     margin-bottom: 0.75rem;
 
+
+
     label {
+
       font-size: $font-size-h5;
+
       color: var(--color-gray900);
+
       cursor: pointer;
+
     }
 
+
+
     %style-checkbox {
+
       width: 1.25rem;
+
       height: 1.25rem;
+
       padding: 0;
+
       display: block;
+
       position: absolute;
+
       top: 0;
+
       left: 0;      
+
     }
+
     //인풋 라디오
+
     input[type='radio'], input[type='checkbox'] {
+
       @include visually-hidden;
+
     }
+
     input[type='radio'] + label, input[type='checkbox'] + label{
+
       position: relative;
+
       padding-left: 1.5rem;
+
     }
+
     input[type='radio'] + label::before{
+
         content: '';
+
         @extend %style-checkbox;
+
         border: 6px solid var(--color-gray600);
+
         border-radius: 50%;   
+
     }
+
+    input[type='radio']:focus + label::before {
+
+      outline: 2px solid orange;
+
+      outline-offset: 2px;
+
+    }
+
     input[type='radio']:checked + label::before {
+
       border-color: var(--color-primary);
+
     }
+
+    input[type='radio']:disabled + label::before {
+
+      opacity: 0.8;
+
+      border-color: var(--color-gray600);
+
+      background: #7e7e7e;
+
+    }
+
+
+
     //인풋 체크박스
+
     input[type='checkbox'] + label::before{
+
         content: '';
+
         @extend %style-checkbox;
+
         border: 1px solid var(--color-gray600);
+
         border-radius: 4px;   
+
     }
-    input[type='checkbox']:checked + label::before {
-      background: var(--color-primary);
-      border-color: var(--color-primary);
+
+    input[type='checkbox']:focus + label::before {
+
+      outline: 2px solid orange;
+
+      outline-offset: 2px;
+
     }
-    input[type='checkbox']:checked + label::after {
-      content: '';
-      background-image: url('../../../assets/images/common/i_checkbox_on.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      position: absolute;
-      top: 0;
-      left: 0;
+
+    input[type='checkbox']:checked + label{    
+
+      &::before {
+
+        background: var(--color-primary);
+
+        border-color: var(--color-primary);
+
+      }
+
+      &::after {
+
+        content: '';
+
+        background-image: url('../images/common/i_checkbox_on.svg');
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+        @extend %style-checkbox;
+
+      }
+
+    }
+
+    input[type='checkbox']:disabled + label::before {
+
+      opacity: 0.8;
+
+      border-color: var(--color-gray600);
+
+      background: #7e7e7e;
+
+    }
+
+  }
+
+}
+
+
+.form-field {
+  width:100%;
+
+  label {
+    @include visually-hidden;
+  }
+
+  &.error {
+    input {
+      border-color: $form-element-error-border ;
     }
   }
+
 }
