@@ -45,6 +45,7 @@ $btn-font-sizes : (
 //form 공통
 $form-element-padding:0.75rem 1rem;
 $form-element-font-size:1rem;
+$form-element-font-size-sm:0.875rem;
 $form-element-radius:0.375rem;
 $form-element-color: var(--color-gray900);
 $form-element-placeholder: var(--color-gray300);
@@ -54,4 +55,7 @@ $form-element-disabled-color: var(--color-gray300);
 $form-element-default-border: var(--color-gray600);
 $form-element-error-border : var(--color-error);
 $form-element-focus-border: var(--color-secondary);
+$form-element-chbox-checked-color: var(--color-primary);
+$form-element-chbox-disabled-bg: var(--color-gray300);
+$form-element-chbox-disabled-checked-bg: var(--color-gray200);
 

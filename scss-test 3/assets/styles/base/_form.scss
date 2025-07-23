@@ -32,92 +32,81 @@ input, textarea, select {
 }
 
 .form-group {
-  margin-bottom: 1.25rem;
   border: none;
   padding: 0;
-
+  @include flex(normal, flex-start,column);
+  gap: 0.5rem;
+  &.flex-row { // 가로 정렬
+    @include flex(normal, flex-start,row);
+  }
   .form-label {
-    font-weight: bold;
     display: block;
     }
-    .form-check {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-    label {
-      font-size: $font-size-h5;
-      color: var(--color-gray900);
-      cursor: pointer;
-    }
-    %style-checkbox {
-      width: 1.25rem;
-      height: 1.25rem;
-      padding: 0;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+    .form-check {      
+      label {
+        font-size: $form-element-font-size;
+        color: $form-element-color;
+        cursor: pointer;
+        @include flex(normal, flex-start,row);
+        gap: 0.5rem;
+      }
 
-    //인풋 라디오
+    //인풋 라디오/체크박스 스크린리더온리
     input[type='radio'], input[type='checkbox'] {
       @include visually-hidden;
     }
-    input[type='radio'] + label, input[type='checkbox'] + label{
-      position: relative;
-      padding-left: 1.5rem;
-    }
+    //인풋 라디오
     input[type='radio'] + label::before{
         content: '';
-        @extend %style-checkbox;
-        border: 6px solid var(--color-gray600);
-        border-radius: 50%;
+        @include checkbox-style(1.5rem);
+        border: 1px solid $form-element-default-border;
+        @include border-radius(50%);
     }
-
     input[type='radio']:focus + label::before {
-      outline: 2px solid orange;
-      outline-offset: 2px;
+      @include focus-outline;
     }
-
     input[type='radio']:checked + label::before {
-      border-color: var(--color-primary);
+      border: 6px solid $form-element-chbox-checked-color;
     }
-
     input[type='radio']:disabled + label::before {
-      opacity: 0.8;
-      border-color: var(--color-gray600);
-      background: #7e7e7e;
+      border-color: $form-element-disabled-color;
+      background-color: $form-element-chbox-disabled-bg;
     }
     //인풋 체크박스
     input[type='checkbox'] + label::before{
         content: '';
-        @extend %style-checkbox;
-        border: 1px solid var(--color-gray600);
-        border-radius: 4px;
+        @include checkbox-style(1.5rem);
+        border-radius: $form-element-radius;
+        border: 1px solid $form-element-default-border;
     }
-
     input[type='checkbox']:focus + label::before {
-      outline: 2px solid orange;
-      outline-offset: 2px;
+      @include focus-outline;
     }
     input[type='checkbox']:checked + label{
       &::before {
-        background: var(--color-primary);
-        border-color: var(--color-primary);
-      }
-      &::after {
-        content: '';
+        border-color: $form-element-chbox-checked-color;
+        background-color:$form-element-chbox-checked-color;
         background-image: url('../images/common/i_checkbox_on.svg');
         background-size: contain;
         background-repeat: no-repeat;
-        @extend %style-checkbox;
       }
     }
     input[type='checkbox']:disabled + label::before {
-      opacity: 0.8;
-      border-color: var(--color-gray600);
-      background: #7e7e7e;
+      border-color: $form-element-disabled-color;
+      background-color: $form-element-chbox-disabled-bg;
+    }
+    input[type='checkbox']:checked:disabled + label::before {
+      border-color: $form-element-chbox-disabled-checked-bg;
+      background-color: $form-element-chbox-disabled-checked-bg;
+      background-image: url('../images/common/i_checkbox_disabled.svg');
+    }
+  }
+  .form-check.sm {
+    label {
+      font-size: $form-element-font-size-sm;
+    }
+    input[type='checkbox'] + label::before{ 
+      @include checkbox-style(1.125rem);
     }
   }
 }

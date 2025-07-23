@@ -101,3 +101,11 @@
   clip:rect(0 0 0 0);
   overflow:hidden;
 }
+
+// 인풋 라디오/체크박스 스타일
+@mixin checkbox-style($size) {
+  width: $size;
+  height: $size;
+  padding: 0;
+  display: block;
+}
