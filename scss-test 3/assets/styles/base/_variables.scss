@@ -1,27 +1,32 @@
 /****** _variables.scss : 프로젝트에서 공통으로 사용할 폰트 크기, 간격 등 변수 정의 ******/
-:root{
-  --color-primary: #1e90ff;
-  --color-secondary: #ff691e;
-  --color-gray900: #111;
-  --color-gray600: #555;
-  --color-gray300: #777;
-  --color-gray200: #f2f2f2;
-  --color-gray000: #fff;
 
-  --color-error: #e63946;
 
-  
-}
+//Color Wrappers (테마토큰)
+$color-primary : var(--color-primary);
+$color-secondary : var(--color-secondary);
+$color-gray900 : var(--color-gray900);
+$color-gray700 : var(--color-gray700);
+$color-gray500 : var(--color-gray500);
+$color-gray300 : var(--color-gray300);
+$color-gray100 : var(--color-gray100);
+$color-gray000 : var(--color-gray000);
+$color-error : var(--color-error);
 
 $font-family-base: 'Pretendard', sans-serif;
 
+
 // font sizes 
-$font-size-h1 : 2rem;
-$font-size-h2 : 1.75rem;
-$font-size-h3 : 1.5rem;
-$font-size-h4 : 1.25rem;
-$font-size-h5 : 1rem;
-$font-size-h6 : 0.875rem;
+$font-styles: (
+  12 : 130%,
+  14 : 130%,
+  16 : 140%,
+  18 : 140%,
+  20 : 140%,
+  24 : 150%,
+  32 : 150%,
+  48 : 150%
+);
+
 
 
 
@@ -44,18 +49,4 @@ $btn-font-sizes : (
 
 //form 공통
 $form-element-padding:0.75rem 1rem;
-$form-element-font-size:1rem;
-$form-element-font-size-sm:0.875rem;
 $form-element-radius:0.375rem;
-$form-element-color: var(--color-gray900);
-$form-element-placeholder: var(--color-gray300);
-$form-element-bg: var(--color-gray000);
-$form-element-disabled-bg: var(--color-gray200);
-$form-element-disabled-color: var(--color-gray300);
-$form-element-default-border: var(--color-gray600);
-$form-element-error-border : var(--color-error);
-$form-element-focus-border: var(--color-secondary);
-$form-element-chbox-checked-color: var(--color-primary);
-$form-element-chbox-disabled-bg: var(--color-gray300);
-$form-element-chbox-disabled-checked-bg: var(--color-gray200);
-

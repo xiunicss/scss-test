@@ -1,6 +1,20 @@
 
 
 /* _variables.scss : 테마색상 */
+:root{
+  --color-primary: #1e90ff;
+  --color-secondary: #ff691e;
+  --color-gray900: #111;
+  --color-gray700: #555;
+  --color-gray500: #b2b2b2;
+  --color-gray300: #eee;
+  --color-gray100: #f5f5f5;
+  --color-gray000: #ffffff;
+  --color-error: #e63946;
+}
+
+
+
 
 $themes: (
   // theme-light: (
@@ -36,3 +50,15 @@ $themes: (
     text: #222222
   )
 );
+
+
+
+.logo {
+  width:100%;
+  max-width:70%;
+  height:2.125rem;
+  background-image:url(../images/logo/main_logo.svg);
+  background-repeat: no-repeat;
+  background-size:contain;
+
+}

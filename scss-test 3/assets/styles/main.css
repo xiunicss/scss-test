@@ -1,16 +1,5 @@
 @charset "UTF-8";
 /****** _variables.scss : 프로젝트에서 공통으로 사용할 폰트 크기, 간격 등 변수 정의 ******/
-:root {
-  --color-primary: #1e90ff;
-  --color-secondary: #ff691e;
-  --color-gray900: #111;
-  --color-gray600: #555;
-  --color-gray300: #777;
-  --color-gray200: #f2f2f2;
-  --color-gray000: #fff;
-  --color-error: #e63946;
-}
-
 /* _mixins.scss : 자주 쓰는 스타일 패턴이나 반복되는 CSS 로직을 재사용하기 위한 SCSS "함수" 모음 */
 @font-face {
   font-family: "Pretendard";
@@ -50,10 +39,7 @@
 }
 
 html, body {
-  height: 100%;
-  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: #fff;
-  color: #333;
+  font-size: 100%;
 }
 
 input, button, textarea, select {
@@ -65,99 +51,83 @@ input, button, textarea, select {
 
 /* _typography.scss : 기본 텍스트 스타일과 제목, 문단 등 타이포그래피 정의 */
 /****** _variables.scss : 프로젝트에서 공통으로 사용할 폰트 크기, 간격 등 변수 정의 ******/
-:root {
-  --color-primary: #1e90ff;
-  --color-secondary: #ff691e;
-  --color-gray900: #111;
-  --color-gray600: #555;
-  --color-gray300: #777;
-  --color-gray200: #f2f2f2;
-  --color-gray000: #fff;
-  --color-error: #e63946;
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 140%;
-  font-weight: 400;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-family: "Pretendard", sans-serif;
+  background-color: var(--color-gray000);
+  color: var(--color-gray900);
+  word-break: keep-all;
 }
 
 h1 {
   font-size: 2rem;
-  line-height: 140%;
+  line-height: 150%;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 1.75rem;
-  line-height: 140%;
+  font-size: 1.5rem;
+  line-height: 150%;
+  font-weight: 600;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 140%;
+  font-weight: 600;
 }
 
 h4 {
-  font-size: 1.25rem;
-  line-height: 130%;
+  font-size: 1.125rem;
+  line-height: 140%;
+  font-weight: 500;
 }
 
 h5 {
   font-size: 1rem;
-  line-height: 130%;
+  line-height: 140%;
+  font-weight: 500;
 }
 
 h6 {
   font-size: 0.875rem;
   line-height: 130%;
-}
-
-p {
-  margin-bottom: 1rem;
-  color: #555;
+  font-weight: 500;
 }
 
 /* _form.scss : 기본 form 스타일 정의 */
 /****** _variables.scss : 프로젝트에서 공통으로 사용할 폰트 크기, 간격 등 변수 정의 ******/
-:root {
-  --color-primary: #1e90ff;
-  --color-secondary: #ff691e;
-  --color-gray900: #111;
-  --color-gray600: #555;
-  --color-gray300: #777;
-  --color-gray200: #f2f2f2;
-  --color-gray000: #fff;
-  --color-error: #e63946;
-}
-
 label {
   display: block;
   font-size: 0.875rem;
+  line-height: 130%;
 }
 
 input, textarea, select {
+  font-size: 1rem;
+  line-height: 140%;
   width: 100%;
   padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border: 1px solid var(--color-gray600);
+  border: 1px solid var(--color-gray500);
   border-radius: 0.375rem;
   background-color: var(--color-gray000);
 }
 input::placeholder, textarea::placeholder, select::placeholder {
-  color: var(--color-gray300);
+  color: var(--color-gray500);
 }
 input:focus, textarea:focus, select:focus {
-  border-color: var(--color-secondary);
-  outline: 2px solid var(--color-secondary);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 input:disabled, textarea:disabled, select:disabled {
-  background-color: var(--color-gray200);
-  color: var(--color-gray300);
+  background-color: var(--color-gray300);
+  color: var(--color-gray500);
   cursor: not-allowed;
 }
 
@@ -165,28 +135,22 @@ input:disabled, textarea:disabled, select:disabled {
   border: none;
   padding: 0;
   display: flex;
-  flex-direction: column;
   align-items: normal;
   justify-content: flex-start;
-  gap: 0.5rem;
-}
-.form-group.flex-row {
-  display: flex;
   flex-direction: row;
-  align-items: normal;
-  justify-content: flex-start;
+  gap: 0.5rem;
 }
 .form-group .form-label {
   display: block;
 }
 .form-group .form-check label {
   font-size: 1rem;
-  color: var(--color-gray900);
+  line-height: 140%;
   cursor: pointer;
   display: flex;
-  flex-direction: row;
   align-items: normal;
   justify-content: flex-start;
+  flex-direction: row;
   gap: 0.5rem;
 }
 .form-group .form-check input[type=radio], .form-group .form-check input[type=checkbox] {
@@ -203,21 +167,22 @@ input:disabled, textarea:disabled, select:disabled {
   height: 1.5rem;
   padding: 0;
   display: block;
-  border: 1px solid var(--color-gray600);
+  border: 1px solid var(--color-gray500);
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 .form-group .form-check input[type=radio]:focus + label::before {
-  outline: 2px solid var(--color-secondary);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 .form-group .form-check input[type=radio]:checked + label::before {
-  border: 6px solid var(--color-primary);
+  border: 0.375rem solid var(--color-primary);
 }
 .form-group .form-check input[type=radio]:disabled + label::before {
-  border-color: var(--color-gray300);
+  border-color: var(--color-gray500);
   background-color: var(--color-gray300);
 }
 .form-group .form-check input[type=checkbox] + label::before {
@@ -227,10 +192,11 @@ input:disabled, textarea:disabled, select:disabled {
   padding: 0;
   display: block;
   border-radius: 0.375rem;
-  border: 1px solid var(--color-gray600);
+  border: 1px solid var(--color-gray500);
+  flex-shrink: 0;
 }
 .form-group .form-check input[type=checkbox]:focus + label::before {
-  outline: 2px solid var(--color-secondary);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 .form-group .form-check input[type=checkbox]:checked + label::before {
@@ -241,16 +207,17 @@ input:disabled, textarea:disabled, select:disabled {
   background-repeat: no-repeat;
 }
 .form-group .form-check input[type=checkbox]:disabled + label::before {
-  border-color: var(--color-gray300);
+  border-color: var(--color-gray500);
   background-color: var(--color-gray300);
 }
 .form-group .form-check input[type=checkbox]:checked:disabled + label::before {
-  border-color: var(--color-gray200);
-  background-color: var(--color-gray200);
+  border-color: var(--color-gray100);
+  background-color: var(--color-gray100);
   background-image: url("../images/common/i_checkbox_disabled.svg");
 }
 .form-group .form-check.sm label {
   font-size: 0.875rem;
+  line-height: 130%;
 }
 .form-group .form-check.sm input[type=checkbox] + label::before {
   width: 1.125rem;
@@ -274,8 +241,32 @@ input:disabled, textarea:disabled, select:disabled {
   border-color: var(--color-error);
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 /* _variables.scss : 테마색상 */
-/* _variables.scss : 테마색상 */
+:root {
+  --color-primary: #1e90ff;
+  --color-secondary: #ff691e;
+  --color-gray900: #111;
+  --color-gray700: #555;
+  --color-gray500: #b2b2b2;
+  --color-gray300: #eee;
+  --color-gray100: #f5f5f5;
+  --color-gray000: #ffffff;
+  --color-error: #e63946;
+}
+
+.logo {
+  width: 100%;
+  max-width: 70%;
+  height: 2.125rem;
+  background-image: url(../images/logo/main_logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .theme-dark {
   --color-primary: red;
   --color-background: #111111;
@@ -474,11 +465,14 @@ button {
 }
 
 .btn {
-  display: inline-flex;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  border-radius: 0.25rem;
+  flex-direction: row;
   font-weight: 500;
   width: auto;
   transition: none;
@@ -494,7 +488,7 @@ button {
   color: var(--color-gray000);
 }
 .btn.gray2 {
-  border: 1px solid var(--color-gray600);
+  border: 1px solid var(--color-gray500);
   background-color: var(--color-gray000);
   color: var(--color-gray900);
 }
@@ -562,9 +556,9 @@ button {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+  flex-direction: row;
   box-sizing: border-box;
 }
 .card-wrap .img-test {
@@ -572,9 +566,9 @@ button {
 }
 .card-wrap .img-test .box {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  flex-direction: column;
 }
 .card-wrap .img-test .box .box-text {
   font-size: 0.875rem;
@@ -582,9 +576,9 @@ button {
 .card-wrap .text-test,
 .card-wrap .form-test {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  flex-direction: column;
 }
 .card-wrap .text-test > * + *,
 .card-wrap .form-test > * + * {

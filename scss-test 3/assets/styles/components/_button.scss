@@ -105,31 +105,29 @@ button {
 
 
 .btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content: center;
-  border:none;
-  border-radius:0.25rem;
+  @include border-radius(0.5rem);
+  @include flex(center, center, row);
+ 
   font-weight: 500;
   width:auto;
   transition: none; // 모바일 접근성 고려
 
-  background-color:var(--color-primary);
-  color:var(--color-gray000);
+  background-color: $color-primary;
+  color: $color-gray000;
 
 
   &--secondary {
-    background-color:var(--color-secondary);
-    color:var(--color-gray000);
+    background-color: $color-secondary;
+    color: $color-gray000;
   }
   &.gray1 {
-    background-color:var(--color-gray900);
-    color:var(--color-gray000);
+    background-color: $color-gray900;
+    color: $color-gray000;
   }
   &.gray2 {
-    border:1px solid var(--color-gray600);
-    background-color:var(--color-gray000);
-    color:var(--color-gray900);
+    border:1px solid $color-gray500;;
+    background-color: $color-gray000;
+    color: $color-gray900;;
   }
 
   //크기적용 mixin

@@ -55,6 +55,14 @@ $themes: (
   )
 );
 
+// 테마 변수 정의
+$primary:var(--color-primary);
+$secondary:var(--color-secondary);
+$background:var(--color-background);
+$text:var(--color-text);
+$gray000:var(--color-gray000);
+$gray600:var(--color-gray600);
+$gray900:var(--color-gray900);
 
 //테마 스위처 버튼 컬러정의
 $button-theme-colors: (

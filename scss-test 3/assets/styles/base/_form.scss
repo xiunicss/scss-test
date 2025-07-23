@@ -4,48 +4,48 @@
 
 label {
   display:block;
-  font-size:0.875rem;
+  @include font-size(14);
 }
 
 
 input, textarea, select {
+  @include font-size(16);
   width:100%;
   padding: $form-element-padding;
-  font-size: $form-element-font-size;
-  border:1px solid $form-element-default-border;
+  border:1px solid $color-gray500;
   border-radius: $form-element-radius;
-  background-color:$form-element-bg;
+  background-color:$color-gray000;
 
   &::placeholder {
-    color:$form-element-placeholder;
+    color:$color-gray500;
   }
   &:focus {
-    border-color:$form-element-focus-border;
     @include focus-outline;
   }
   &:disabled {
-    background-color:$form-element-disabled-bg;
-    color:$form-element-disabled-color;
+    background-color:$color-gray300;
+    color:$color-gray500;
     cursor: not-allowed;
   }
-
 }
+
+
+
+
 
 .form-group {
   border: none;
   padding: 0;
-  @include flex(normal, flex-start,column);
+  @include flex(normal, flex-start, row);
   gap: 0.5rem;
-  &.flex-row { // 가로 정렬
-    @include flex(normal, flex-start,row);
-  }
+  
+
   .form-label {
     display: block;
     }
     .form-check {      
       label {
-        font-size: $form-element-font-size;
-        color: $form-element-color;
+      @include font-size(16);
         cursor: pointer;
         @include flex(normal, flex-start,row);
         gap: 0.5rem;
@@ -57,53 +57,55 @@ input, textarea, select {
     }
     //인풋 라디오
     input[type='radio'] + label::before{
-        content: '';
-        @include checkbox-style(1.5rem);
-        border: 1px solid $form-element-default-border;
-        @include border-radius(50%);
+      content: '';
+      @include checkbox-style(1.5rem);
+      border: 1px solid $color-gray500;
+      @include border-radius(50%);
+      flex-shrink: 0;
     }
     input[type='radio']:focus + label::before {
       @include focus-outline;
     }
     input[type='radio']:checked + label::before {
-      border: 6px solid $form-element-chbox-checked-color;
+      border: 0.375rem solid $color-primary;
     }
     input[type='radio']:disabled + label::before {
-      border-color: $form-element-disabled-color;
-      background-color: $form-element-chbox-disabled-bg;
+      border-color: $color-gray500;
+      background-color: $color-gray300;
     }
     //인풋 체크박스
     input[type='checkbox'] + label::before{
-        content: '';
-        @include checkbox-style(1.5rem);
-        border-radius: $form-element-radius;
-        border: 1px solid $form-element-default-border;
+      content: '';
+      @include checkbox-style(1.5rem);
+      border-radius: $form-element-radius;
+      border: 1px solid $color-gray500;
+      flex-shrink: 0;
     }
     input[type='checkbox']:focus + label::before {
       @include focus-outline;
     }
     input[type='checkbox']:checked + label{
       &::before {
-        border-color: $form-element-chbox-checked-color;
-        background-color:$form-element-chbox-checked-color;
+        border-color: $color-primary;
+        background-color:$color-primary;
         background-image: url('../images/common/i_checkbox_on.svg');
         background-size: contain;
         background-repeat: no-repeat;
       }
     }
     input[type='checkbox']:disabled + label::before {
-      border-color: $form-element-disabled-color;
-      background-color: $form-element-chbox-disabled-bg;
+      border-color: $color-gray500;
+      background-color: $color-gray300;
     }
     input[type='checkbox']:checked:disabled + label::before {
-      border-color: $form-element-chbox-disabled-checked-bg;
-      background-color: $form-element-chbox-disabled-checked-bg;
+      border-color: $color-gray100;
+      background-color: $color-gray100;
       background-image: url('../images/common/i_checkbox_disabled.svg');
     }
   }
   .form-check.sm {
     label {
-      font-size: $form-element-font-size-sm;
+      @include font-size(14);    
     }
     input[type='checkbox'] + label::before{ 
       @include checkbox-style(1.125rem);
@@ -120,8 +122,15 @@ input, textarea, select {
 
   &.error {
     input {
-      border-color: $form-element-error-border ;
+      border-color: $color-error;
     }
   }
 
+}
+
+
+
+
+.flex-column { // 세로 정렬
+  flex-direction: column;
 }

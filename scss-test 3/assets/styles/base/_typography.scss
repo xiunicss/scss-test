@@ -3,46 +3,57 @@
 @import '../base/_variables' ;//_variables 불러오기
 
 
-body {
-  font-size: 16px;
-  line-height: 140%;
-  font-weight: 400;
+///// 공통아닌 font 관련된 mixin이라 해당파일에 같이 썼음
+@mixin font-size($size) {
+  $lh: map-get($font-styles, $size);
+  @if $lh != null {
+    font-size: ($size / 16) * 1rem;
+    line-height:$lh;
+
+  } @else {
+    @warn "폰트 사이즈 #{$size}px는 정의되지 않았습니다.";
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;  
+
+html {
+  font-size:100%;
+  scroll-behavior: smooth;
 }
+
+body {
+  @include font-size(16);
+  font-family: $font-family-base;
+  background-color :$color-gray000;
+  color: $color-gray900;
+  word-break: keep-all;
+}
+
 
 h1 {
-  font-size: $font-size-h1;
-  line-height: 140%;
+  @include font-size(32);
+  font-weight:700;
 }
 
 h2 {
-  font-size: $font-size-h2;
-  line-height:140%;
+  @include font-size(24);
+  font-weight:600;
 }
 
 h3 {
-  font-size: $font-size-h3;
-  line-height:140%;
+  @include font-size(20);
+  font-weight:600;
 }
 h4 {
-  font-size: $font-size-h4;
-  line-height:130%;
+  @include font-size(18);
+  font-weight:500;
 }
 h5 {
-  font-size: $font-size-h5;
-  line-height:130%;
+  @include font-size(16);
+  font-weight:500;
 }
 h6 {
-  font-size: $font-size-h6;
-  line-height:130%;
+  @include font-size(14);
+  font-weight:500;
 }
 
-
-
-p {
-  margin-bottom: 1rem;
-  color: #555;
-}

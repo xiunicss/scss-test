@@ -18,18 +18,14 @@
   }
 }
 
-// 🔠 폰트 사이즈 + 줄간격
-@mixin font($size, $line-height: 1.4) {
-  font-size: $size;
-  line-height: $line-height;
-}
+
 
 // 📦 flex 정렬 세트
 @mixin flex($align: center, $justify: center, $direction: row) {
   display: flex;
-  flex-direction: $direction;
   align-items: $align;
   justify-content: $justify;
+  flex-direction: $direction;
 }
 
 // 🔒 말줄임 처리 (1줄 or N줄)
@@ -89,7 +85,7 @@
 
 
 @mixin focus-outline {
-  outline: 2px solid $form-element-focus-border;
+  outline: 2px solid $color-primary;
   outline-offset: 2px;
 }
 
@@ -101,6 +97,7 @@
   clip:rect(0 0 0 0);
   overflow:hidden;
 }
+
 
 // 인풋 라디오/체크박스 스타일
 @mixin checkbox-style($size) {
