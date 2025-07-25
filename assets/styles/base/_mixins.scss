@@ -88,3 +88,14 @@
   opacity: 0.9;
   }
 }
+@mixin bg-image-default($position: center) {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: $position;
+}
+
+// %bg-image-default {
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-position: center;
+// }

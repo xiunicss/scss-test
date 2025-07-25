@@ -42,11 +42,81 @@ html, body {
   font-size: 100%;
 }
 
+/* --- 접근성: 스크린리더 전용 텍스트 --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- 폼 요소 초기화 + 접근성 --- */
 input, button, textarea, select {
   font: inherit;
   border: none;
+  outline: none;
   background: none;
   appearance: none;
+  margin: 0;
+}
+
+/* 사용자 지정 focus outline 보장 */
+input:focus,
+button:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-secondary); /* 시각적 포커스 강조 */
+  outline-offset: 2px;
+}
+
+legend {
+  position: absolute;
+  left: -999em;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+/* --- 버튼 기본 스타일 정리 --- */
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* --- 링크 초기화 --- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* --- 리스트 기본 제거 --- */
+ul, ol {
+  list-style: none;
+}
+
+/* --- 이미지 접근성 --- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- 테이블 --- */
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
 /* _typography.scss : 기본 텍스트 스타일과 제목, 문단 등 타이포그래피 정의 */
@@ -140,9 +210,6 @@ input:disabled, textarea:disabled, select:disabled {
   flex-direction: row;
   gap: 0.5rem;
 }
-.form-group .form-label {
-  display: block;
-}
 .form-group .form-check label {
   font-size: 1rem;
   line-height: 140%;
@@ -205,6 +272,7 @@ input:disabled, textarea:disabled, select:disabled {
   background-image: url("../images/common/i_checkbox_on.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .form-group .form-check input[type=checkbox]:disabled + label::before {
   border-color: var(--color-gray500);
@@ -226,16 +294,58 @@ input:disabled, textarea:disabled, select:disabled {
   display: block;
 }
 
-.form-field {
-  width: 100%;
+.form-toggle {
+  display: inline-block;
+  position: relative;
 }
-.form-field label {
+.form-toggle input[type=checkbox] {
   position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+.form-toggle input[type=checkbox]:checked + label {
+  background-color: var(--color-primary);
+}
+.form-toggle input[type=checkbox]:checked + label::before {
+  left: calc(1.75rem - 2px);
+}
+.form-toggle input[type=checkbox]:focus + label {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.form-toggle label {
+  display: flex;
+  align-items: normal;
+  justify-content: flex-start;
+  flex-direction: row;
+  font-size: 0;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: 2.75rem;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: var(--color-gray300);
+  transition: background 0.2s;
+}
+.form-toggle label::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background: var(--color-gray000);
+  border-radius: 50%;
+  transition: left 0.2s;
+}
+
+.form-field {
+  width: 100%;
 }
 .form-field.error input {
   border-color: var(--color-error);
@@ -631,4 +741,85 @@ button {
   min-height: 100vh;
   padding: 5rem 1.25rem;
   background-color: #f9f9f9;
+}
+
+/* login */
+.contents.login .form-field .conts {
+  position: relative;
+}
+.contents.login .form-field .conts.form-id input {
+  padding-left: 3rem;
+}
+.contents.login .form-field .conts.form-id::before {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("../../assets/images/common/foot_ico_profile.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contents.login .form-field .conts.form-pw input {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.contents.login .form-field .conts.form-pw::before {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("../../assets/images/common/foot_ico_pay.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contents.login .form-field .conts.form-pw .btn-ico.ico-pw-visible {
+  font-size: 0;
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("../../assets/images/common/foot_ico_school.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contents.login .form-field + .form-field {
+  margin-top: 1.25rem;
+}
+.contents.login .link-group {
+  margin-top: 1.25rem;
+}
+.contents.login .link-group ul {
+  display: flex;
+  align-items: normal;
+  justify-content: center;
+  flex-direction: row;
+}
+.contents.login .link-group ul li + li {
+  position: relative;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
+.contents.login .link-group ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1rem;
+  background-color: var(--color-gray500);
+}
+.contents.login .w100p {
+  width: 100%;
 }

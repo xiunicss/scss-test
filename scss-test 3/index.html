@@ -82,8 +82,21 @@
         <h3 class="card-tit">&#x2705; form 테스트</h3>
         <div class="card-cont form-test">
           <div class="form-field">
+            <div class="tit sr-only">
+              <label for="email">이메일</label>
+            </div>
+            <div class="conts">
+              <input type="email" id="email" placeholder="이메일을 입력하세요" />
+              <button type="button">
+                <span class="sr-only">검색</span>
+              </button>
+            </div>
+
+          </div>
+          
+          <div class="form-field">
             <label for="email">이메일</label>
-            <input type="email" id="email" placeholder="이메일을 입력하세요" />
+            <input type="email" id="email" placeholder="이메일을 입력하세요" value="">
           </div>
           <div class="form-field">
             <label for="email">이메일</label>
@@ -106,66 +119,98 @@
         <h3 class="card-tit">&#x2705; form 테스트</h3>
         <div class="card-cont form-test">
           <!-- <label for="email">이메일:</label> <input type="email" id="email" /> -->
-          <fieldset class="form-group flex-column">
-            <legend class="form-label" style="margin-bottom: 0.75rem; font-weight: bold;">라디오 테스트</legend>
-            <div class="form-check">
-              <input type="radio" id="chek01" name="menuselect" value="chek01" class="form-radio" aria-checked="false"/>
-              <label for="chek01">선택1</label>
+          <fieldset>
+            <legend>라디오 테스트</legend>
+            
+            <h4 class="form-label" style="margin-bottom: 0.375rem;">라디오 테스트</h4>
+            <div class="form-group flex-column">
+              <div class="form-check">
+                <input type="radio" id="chek01" name="menuselect" value="chek01" class="form-radio" aria-checked="false"/>
+                <label for="chek01">선택1</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" id="chek02" name="menuselect" value="chek02" class="form-radio" aria-checked="false" checked />
+                <label for="chek02">선택2</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" id="chek03" name="menuselect" value="chek03" class="form-radio" aria-checked="false" disabled/>
+                <label for="chek03">disabled</label>
+              </div>
             </div>
-            <div class="form-check">
-              <input type="radio" id="chek02" name="menuselect" value="chek02" class="form-radio" aria-checked="false" />
-              <label for="chek02">선택2</label>
-            </div>
-            <div class="form-check">
-              <input type="radio" id="chek03" name="menuselect" value="chek03" class="form-radio" aria-checked="false" disabled/>
-              <label for="chek03">disabled</label>
-            </div>
-          </fieldset>
-
-          <fieldset class="form-group flex-column">
-            <legend class="form-label" style="margin-bottom: 0.75rem; font-weight: bold;">체크박스 테스트</legend>
-            <div class="form-check">
-              <input type="checkbox" id="agree-all" name="agree-all" class="form-checkbox" aria-checked="false" />
-              <label for="agree-all">전체 이용약관에 동의합니다.</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="agree-terms" name="agree-terms" class="form-checkbox" aria-checked="false" />
-              <label for="agree-terms">이용약관에 동의합니다.</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="agree-marketing" name="agree-marketing" class="form-checkbox" aria-checked="true" checked/>
-              <label for="agree-marketing">마케팅 정보 수신에 동의합니다.</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="no-agree" name="no-agree" class="form-checkbox" aria-checked="false" disabled/>
-              <label for="no-agree">disabled</label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" id="check-dis" name="check-dis" class="form-checkbox" aria-checked="false" checked disabled/>
-              <label for="check-dis">checked disabled</label>
+            <h4 class="form-label" style="margin-bottom: 0.375rem;">라디오 disabled 테스트</h4>
+            <div class="form-group">
+              <div class="form-check">
+                <input type="radio" id="chek07" name="disabled-sl" value="chek07" class="form-radio" aria-checked="true"checked disabled/>
+                <label for="chek07">선택1</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" id="chek08" name="disabled-sl" value="chek08" class="form-radio" aria-checked="false" disabled />
+                <label for="chek08">선택2</label>
+              </div>
             </div>
           </fieldset>
-          <fieldset class="form-group flex-column">
-            <legend class="form-label" style="margin-bottom: 0.75rem; font-weight: bold;">체크박스 sm사이즈 테스트</legend>
-            <div class="form-check sm">
-              <input type="checkbox" id="ch01" name="ch01" class="form-checkbox" aria-checked="false" />
-              <label for="ch01">전체 이용약관에 동의합니다.</label>
+          <br/>
+          <fieldset>
+            <legend>체크박스 테스트</legend>
+            <h4 class="form-label" style="margin-bottom: 0.375rem;">체크박스 테스트</h4>
+            <div class="form-group flex-column">              
+              <div class="form-check">
+                <input type="checkbox" id="agree-all" name="agree-all" class="form-checkbox" aria-checked="false" />
+                <label for="agree-all">전체 이용약관에 동의합니다.</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="agree-terms" name="agree-terms" class="form-checkbox" aria-checked="false" />
+                <label for="agree-terms">이용약관에 동의합니다.</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="agree-marketing" name="agree-marketing" class="form-checkbox" aria-checked="true" checked/>
+                <label for="agree-marketing">마케팅 정보 수신에 동의합니다.</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="no-agree" name="no-agree" class="form-checkbox" aria-checked="false" disabled/>
+                <label for="no-agree">disabled</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="check-dis" name="check-dis" class="form-checkbox" aria-checked="false" checked disabled/>
+                <label for="check-dis">checked disabled</label>
+              </div>
             </div>
-            <div class="form-check sm">
-              <input type="checkbox" id="ch02" name="ch02" class="form-checkbox" aria-checked="false" />
-              <label for="ch02">이용약관에 동의합니다.</label>
+          </fieldset>
+          <br/>
+          <fieldset>
+            <legend>체크박스 sm사이즈 테스트</legend>
+            <h4 class="form-label" style="margin-bottom: 0.375rem;">체크박스 sm사이즈 테스트</h4>
+            <div class="form-group flex-column">
+              <div class="form-check sm">
+                <input type="checkbox" id="ch01" name="ch01" class="form-checkbox" aria-checked="false" />
+                <label for="ch01">전체 이용약관에 동의합니다.</label>
+              </div>
+              <div class="form-check sm">
+                <input type="checkbox" id="ch02" name="ch02" class="form-checkbox" aria-checked="false" />
+                <label for="ch02">이용약관에 동의합니다.</label>
+              </div>
+              <div class="form-check sm">
+                <input type="checkbox" id="ch03" name="ch03" class="form-checkbox" aria-checked="true" checked/>
+                <label for="ch03">마케팅 정보 수신에 동의합니다.</label>
+              </div>
+              <div class="form-check sm">
+                <input type="checkbox" id="ch04" name="ch04" class="form-checkbox" aria-checked="false" disabled/>
+                <label for="ch04">disabled</label>
+              </div>
+              <div class="form-check sm">
+                <input type="checkbox" id="ch05" name="ch05" class="form-checkbox" aria-checked="false" checked disabled/>
+                <label for="ch05">checked disabled</label>
+              </div>
             </div>
-            <div class="form-check sm">
-              <input type="checkbox" id="ch03" name="ch03" class="form-checkbox" aria-checked="true" checked/>
-              <label for="ch03">마케팅 정보 수신에 동의합니다.</label>
-            </div>
-            <div class="form-check sm">
-              <input type="checkbox" id="ch04" name="ch04" class="form-checkbox" aria-checked="false" disabled/>
-              <label for="ch04">disabled</label>
-            </div>
-            <div class="form-check sm">
-              <input type="checkbox" id="ch05" name="ch05" class="form-checkbox" aria-checked="false" checked disabled/>
-              <label for="ch05">checked disabled</label>
+          </fieldset>
+          <br/>
+          <fieldset>
+            <legend>토글 스위치 테스트</legend>
+            <h4 class="form-label" style="margin-bottom: 0.375rem;">토글 스위치 테스트</h4>
+            <div class="form-toggle">
+               <input type="checkbox" id="switch" name="width"/>
+               <label for="switch"></label>
+            </label>
             </div>
           </fieldset>
         </div>

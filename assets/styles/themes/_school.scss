@@ -1,27 +1,26 @@
+@use "../base/mixins" as *;
 $school-logos: (  sch01: 'sch01',  sch02: 'sch02',  sch03: 'sch03');
 
 
 //반복문으로 css생성
 @each $code, $url in $school-logos {
   [data-school="#{$code}"] .school-logo {
+    @include bg-image-default;
     @extend %school-logo;
     background: url("../../assets/images/logo/#{$url}.svg");
   };
   .school-Symbol.#{$code} {
+    @include bg-image-default;
     @extend %school-symbol;
     background-image: url("../../assets/images/logo/#{$url}_symbol.svg");
   }
 }
+
+
 %school-logo {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   width: 80px;height: 80px;
   display: block;
 }
 %school-symbol{
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   width: 80px;height: 80px;
 }
