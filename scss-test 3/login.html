@@ -36,7 +36,7 @@
     <h1 style="margin: 3rem 0;">스마트캠퍼스 아이디로<br>
       로그인해 주세요</h1>
     <form action="#" method="post" class="login-form">
-      <div id="" class="form-field">
+      <div class="form-field">
         <div class="tit" style="margin-bottom: 0.5rem;">
           <label for="login-id">아이디</label>
         </div>    
@@ -44,7 +44,7 @@
           <input type="text" name="login-id" id="login-id" value="" placeholder="아이디를 입력하세요" required="required" data-with-icon="true" >
         </div>        
       </div>
-      <div id="" class="form-field">
+      <div class="form-field">
         <div class="tit" style="margin-bottom: 0.5rem;">
           <label for="login-pw">비밀번호</label>
         </div>    
@@ -63,51 +63,42 @@
         </div>   
     </form>
     <button type="button" class="btn btn--primary lg w100p" style="margin-top: 2rem;">로그인</button>
-      <div class="link-group">
-        <ul>
-          <li><a href="#" class="btn-txt">아이디 찾기</a></li>
-          <li><a href="#" class="btn-txt">비밀번호 찾기</a></li>
-          <li><a href="#" class="btn-txt">회원가입</a></li>
-        </ul>
-      </div>
+    <div class="link-group">
+      <ul>
+        <li><a href="#" class="btn-txt">아이디 찾기</a></li>
+        <li><a href="#" class="btn-txt">비밀번호 찾기</a></li>
+        <li><a href="#" class="btn-txt">회원가입</a></li>
+      </ul>
     </div>
-
-
   </main>
 
-<style>
-
-
-</style>
-
+</div>
 
   <!-- footer -->
-  <footer class="footer" role="navigation" aria-label="하단 메뉴">
+  <!-- 접근성준수 -->
+  <footer class="footer">
     <button type="button" class="footer-tab active" aria-label="학사">
-      <div class="icon icon-school"></div>
-      <div class="text">학사</div>
+      <i class="icon icon-school" aria-hidden="true"></i>
+      <span class="text">학사</span>
     </button>
     <button type="button" class="footer-tab" aria-label="채팅">
-      <div class="icon icon-chat"></div>
-      <div class="text">채팅</div>
+      <i class="icon icon-chat" aria-hidden="true"></i>
+      <span class="text">채팅</span>
     </button>
     <button type="button" class="footer-tab student-id btn-lg-[r]" aria-label="학생증">
-      <div class="icon icon-idcard"></div>
-      <div class="text">학생증</div>
+      <i class="icon icon-idcard" aria-hidden="true"></i>
+      <span class="text">학생증</span>
     </button>
-
     <button type="button" class="footer-tab" aria-label="페이">
-      <div class="icon icon-pay"></div>
-      <div class="text">페이</div>
+      <i class="icon icon-pay" aria-hidden="true"></i>
+      <span class="text">페이</span>
     </button>
-
     <button type="button" class="footer-tab" aria-label="프로필">
-      <div class="icon icon-profile"></div>
-      <div class="text">프로필</div>
-    </button>
-    
+      <i class="icon icon-profile" aria-hidden="true"></i>
+      <span class="text">프로필</span>
+    </button>       
   </footer>
-</div>
+
 </body>
 </html>
 

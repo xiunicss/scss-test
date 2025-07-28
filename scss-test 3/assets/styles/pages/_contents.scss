@@ -7,7 +7,6 @@
 /* login */
 .contents.login {
   .form-field { 
-    .tit { }
     .conts {
       position: relative; 
       &.form-id{              
@@ -86,3 +85,113 @@
     width: 100%;
   }
 }
+
+
+
+/* list-sample */
+
+.sample-list-wrapper {
+  margin-top: 1.25rem;
+  .list {
+    margin-top: 1rem;
+    .list-item {
+      padding: $list-item-padding;
+      border-bottom: 1px solid $color-gray500;
+      position: relative;
+      &:has(.on)::before {
+        content: "";
+        position: absolute;
+        width: calc(100% + 2.5rem);
+        height: 100%;
+        background: $color-gray500;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .item-inner {
+        @include flex(normal, normal, column);
+        flex: 1;
+        position: relative;
+        .tit {
+          @include font-size(16);
+          font-weight: 500;
+        }  
+        .desc {
+          @include font-size(14);
+          color:$color-gray700
+        }
+        
+      }         
+      &:has(.item-link) {
+        padding: $list-link-item-padding;
+        &::after{
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          width: 2rem;
+          height: 2rem;
+          background-image: url(../images/common/i_checkbox_disabled.svg);
+          @include bg-image-default;
+          background-size: 1.5rem;
+          }
+        }
+      }
+      &.icon-list{
+        .item-inner {
+          @include flex(center,normal,row);
+          gap: 0.75rem;
+          .img-thum{flex-shrink: 0;
+            position: relative;
+            i.icon, img {
+              display: block;
+              width: 3rem;
+              height: 3rem;
+              border-radius: 50%;
+              overflow: hidden;
+              background-color: $color-gray500;}
+            i.icon {
+              background-color: gray
+            }
+            img {
+              object-fit: cover;
+              @include bg-image-default;
+            }
+            &.bad::after{
+              position: absolute;
+              content: "";
+              top: 0;
+              left: 0;
+              width: 0.75rem;
+              height: 0.75rem;
+              background-color: red;
+              @include border-radius(50%);
+            }
+          }
+          .item-info{
+            @include flex(normal, normal,column);
+            flex: 1;
+          }
+        }
+      }
+      .badge {
+        padding: 0.25rem 1rem;
+        background-color: pink;
+        color: $color-gray900;
+        @include border-radius((16 + 16)/16 * 1rem);
+        @include font-size(16);
+        &--state2 {
+          background-color: orange;
+        }
+        &--state3 {
+          background-color: skyblue;
+        }
+      }
+      
+
+    }
+    .list + .list-title  {
+      margin-top:2.5rem;
+    }  
+  }
